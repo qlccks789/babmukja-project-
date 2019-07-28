@@ -1,0 +1,47 @@
+@charset "UTF-8";
+.kakao_login_container {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+}
+.kakao_login_title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Jua", sans-serif;
+}
+.kakao_login_input input {
+  padding: 10px;
+  box-sizing: border-box;
+  width: 300px;
+  height: 45px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.kakao_login_input input:focus {
+  border-color: #7db341;
+  transition: border-color 0.5s ease-in-out;
+}
+.kakao_reset_button button {
+  margin-top: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 300px;
+  height: 50px;
+  line-height: 45px;
+  background-color: #7db341;
+  font-size: 17px;
+}
+.kakao_reset_button button:hover {
+  background-color: #749e45;
+}
+.kakao_signup_result .kakao_check {
+  font-weight: bold;
+}

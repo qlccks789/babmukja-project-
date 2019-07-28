@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+.admin_pb_selectList_container {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.adming_pb_selectAll {
+    font-size: 40px;
+    margin-top: 120px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(81, 81, 81);
+}
+
+.admin_pb_selectList {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.admin_pb_selectList_table {
+	border-collapse: separate;
+	border-spacing: 1px;
+	text-align: center;
+	line-height: 1.5;
+	margin : 20px 10px;
+	margin-top: 70px;
+}
+
+.admin_pb_selectList_table > tbody > tr > th {
+    width: 150px;
+    padding: 10px;
+    font-size: 20px;
+    vertical-align: top;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    color: rgb(81, 81, 81);
+    
+    
+}
+
+.admin_pb_selectList_table > tbody > tr > td {
+    width: 300px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    color: rgb(81, 81, 81);
+    
+}
+
+.list_td:hover {
+	background-color: rgba(220, 220, 220, 0.5);
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+
+.page {
+	font-size: 15px;
+}
+
+.page > div{
+	font-size: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pb_store_update_btn {
+    outline: 0;
+    width: 50px;
+    height: 25px;
+    background-color: white;
+    border-radius: 5px;
+    color: #7db341;
+}
+
+.pb_store_update_btn:hover {
+    background-color: rgba(220, 220, 220, 1.0);
+    color: white;
+}
+
+.pb_store_delete_btn {
+    outline: 0;
+    width: 50px;
+    height: 25px;
+    background-color: white;
+    border-radius: 5px;
+    color: #7db341;
+}
+
+.pb_store_delete_btn:hover {
+    background-color: rgba(220, 220, 220, 1.0);
+    color: white;
+}
+
+body {
+	background-color: white;
+}

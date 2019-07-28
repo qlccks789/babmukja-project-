@@ -1,0 +1,89 @@
+@charset "UTF-8";
+.search_id_container {
+	width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 100px;
+}
+
+.search_id_title {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+.search_id_input input {
+	margin-bottom: 20px;
+	padding: 10px;
+	box-sizing: border-box;
+	width: 300px;
+	height: 45px;
+	outline: none;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	margin-bottom: 8px;
+	margin-right: 5px;
+}
+
+.search_id_input input:focus {
+	border-color: #7db341;
+	transition: border-color 0.5s ease-in-out;
+}
+
+.search_id_input button {
+	margin-left: 16px;
+	border: none;
+	background: none;
+	background-color: #7db341;
+	color: white;
+	border-radius: 3px;
+	width: 110px;
+	height: 30px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.search_id_input button:hover {
+	background-color: #749e45;
+}
+
+.search_id_button button {
+	margin-top: 20px;
+	width: 300px;
+	height: 50px;
+	border: none;
+	line-height: 45px;
+	background-color: #7db341;
+	margin-bottom: 30px;
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	font-size: 17px;
+}
+
+.search_id_button button:hover {
+	background-color: #749e45;
+}
+
+.search_id .search_id_result {
+	font-weight: bold;
+	font-size: 15px;
+}
+.login_search_pass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.login_search_pass a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: rgb(81, 81, 81);
+}
+.login_search_pass .login_a:hover a {
+  border-bottom: 1px solid rgb(81, 81, 81);
+}
+.login_search_pass .search_pass_a:hover a {
+  border-bottom: 1px solid rgb(81, 81, 81);
+}

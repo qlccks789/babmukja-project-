@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.babmukja.repository.mapper.BoardMapper">
+	<resultMap id="boardMap" type="board">
+		<result column="board_no" property="BoardNo" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="writer" property="writer" />
+		<result column="regdate" property="regdate" />
+		<result column="viewcnt" property="viewcnt" />
+		<result column="imgpath" property="imgpath" />
+		<result column="img_orgname" property="imgOrgname" />
+		<result column="img_sysname" property="imgSysname" />
+	</resultMap>
+
+	<!-- 글목록 -->
+	<select id="selectBoard" parameterType="page" resultMap="boardMap">
+		select *
+		from tb_board
+		order by board_no desc
+		limit #{begin},#{end}
+	</select>
+
+	<!-- 페이징 -->
+	<select id="selectBoardCount" resultType="int">
+		select count(*)
+		from tb_board
+	</select>
+
+	<!-- 글번호 -->
+	<select id="selectBoardByNo" parameterType="int" resultType="board">
+		select *
+		from tb_board
+		where board_no = #{boardNo}
+	</select>
+
+	<!-- 글등록 -->
+	<insert id="insertBoard" parameterType="board">
+		insert into tb_board (title, writer, content, imgpath, img_orgname, img_sysname)
+		values (#{title}, #{writer}, #{content},#{imgpath}, #{imgOrgname}, #{imgSysname})
+	</insert>
+
+	<!-- 글삭제 -->
+	<delete id="deleteBoard" parameterType="int">
+		delete
+		from tb_board
+		where
+		board_no = #{boardNo}
+	</delete>
+	
+	<!-- 글수정 -->
+	<update id="updateBoard" parameterType="board">
+		update tb_board
+		   set title = #{title},
+		       writer = #{writer},
+		       content = #{content},
+		       imgpath = #{imgpath},
+		       img_orgname = #{imgOrgname},
+		       img_sysname = #{imgSysname}
+		 where board_no = #{boardNo}      
+	</update>
+
+	<!-- 조회수 -->
+	<update id="updateBoardViewCnt" parameterType="int">
+		update tb_board
+		set viewcnt = viewcnt + 1
+		where board_no = #{boardNo}
+	</update>
+	
+ 	<!-- 댓글부분 시작 --> 
+	<resultMap id="boardReviewMap" type="boardReview">
+		<result column="board_review_no" property="boardReviewNo" />
+		<result column="board_no" property="boardNo" />
+		<result column="content" property="content" />
+		<result column="regdate" property="regdate" />
+		<result column="viewcnt" property="viewcnt" />
+	</resultMap>
+	
+  	<!-- 댓글 목록 --> 
+	<select id="selectBoardView" parameterType="page" resultMap="boardReviewMap">
+		select *
+		  from tb_board_review
+		  where board_no = #{boardNo}
+		  order by board_review_no desc
+		  limit #{index}, 5
+	</select>
+	
+	<!-- 페이징 -->
+	<select id="selectBoardReviewCount" parameterType="page" resultType="int">
+		select count(*)
+		  from tb_board_review
+		 where board_no = #{boardNo}
+	</select>
+	
+	<!-- 댓글 등록 -->
+	<insert id="insertBoardReview" parameterType="boardReview">
+		insert into tb_board_review (board_no, content)
+		values (#{boardNo}, #{content})
+	<selectKey keyProperty="boardReviewNo" resultType="int" order="AFTER">
+    	SELECT LAST_INSERT_ID()
+  	</selectKey>
+	</insert>
+	
+	<!-- 댓글 하나만 가져오기 -->
+	<select id="selectBoardReviewOneByNo" parameterType="int" resultType="boardReview">
+		select *
+		  from tb_board_review
+		 where board_review_no = #{boardReviewNo}
+	</select>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="deleteBoardReview" parameterType="int">
+		delete
+		 from tb_board_review
+		where board_review_no = #{boardReviewNo}
+	</delete>
+	
+	<!-- 댓글 수정 -->
+	<update id="updateBoardView" parameterType="boardReview">
+		update tb_board_review
+		   set content = #{content}
+		 where board_review_no = #{boardReviewNo}
+	</update>
+	
+	
+
+</mapper>

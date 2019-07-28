@@ -1,0 +1,123 @@
+@charset "UTF-8";
+.login__container {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top : 100px;
+}
+.login__logo a {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  color: black;
+}
+.login__input input {
+  padding: 10px;
+  box-sizing: border-box;
+  width: 300px;
+  height: 45px;
+  outline: none;
+  border : 1px solid rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+#email{
+	margin-bottom:15px;
+}
+.login__input input[name='id']{
+  margin-bottom: 5px;
+}
+
+.login__input input:focus {
+  border-color:#7db341;
+  transition: border-color 0.5s ease-in-out;
+}
+.login__button {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login__button button{
+  width: 300px;
+  height: 50px;
+  line-height: 45px;
+  background-color: #7db341;
+  margin-bottom: 40px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 17px;
+}
+.login__button a:hover {
+  background-color: #749e45;
+}
+.login__id input::placeholder {
+  color: rgb(81, 81, 81);
+  font-size: 16px;
+}
+.login__password input::placeholder {
+  color: rgb(81, 81, 81);
+  font-size: 16px;
+}
+.id__pass_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.id__pass_search a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: rgb(81, 81, 81);
+}
+.id__pass_search .search__id:hover a {
+  border-bottom: 1px solid rgb(81, 81, 81);
+}
+.id__pass_search .search__pass:hover a {
+  border-bottom: 1px solid rgb(81, 81, 81);
+}
+.social__login-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.social__content {
+  color: rgb(81, 81, 81);
+  margin-bottom: 15px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.social__login-button img {
+  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.social__login-button .facebook__icon:hover {
+  opacity: 0.5;
+}
+.social__login-button .kakao__icon:hover {
+  opacity: 0.5;
+}
+.social__login-button .naver__icon:hover {
+  opacity: 0.5;
+}
+.social__simple-login {
+  display: flex;
+  justify-content: center;
+  color: rgb(81, 81, 81);
+  font-weight: bold;
+}
+.social__simple-login a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: rgb(81, 81, 81);
+  font-weight: bold;
+}
+.social__simple-login .sign__up:hover a {
+  border-bottom: 1px solid rgb(81, 81, 81);
+}

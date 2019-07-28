@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:beans="http://www.springframework.org/schema/beans" 
+	   xmlns:p="http://www.springframework.org/schema/p" 
+	   xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	   xmlns:tx="http://www.springframework.org/schema/tx" 
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"		
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/jdbc
+                           http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+                           http://mybatis.org/schema/mybatis-spring
+                           http://mybatis.org/schema/mybatis-spring-1.2.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+		
+	<context:component-scan base-package="kr.co.babmukja" />
+	
+	<!-- 스프링 파일업로드를 위한 필수 작업. -->
+	<bean id="multipartResolver" 
+		  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="2000000000" />
+	</bean>
+	
+	<context:property-placeholder location="classpath:config/mybatis/db.properties"/>
+   	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+	  p:driverClassName="${jdbc.mysql.driver}"
+	  p:url="${jdbc.mysql.url}"
+	  p:username="${jdbc.mysql.username}"
+	  p:password="${jdbc.mysql.password}" />
+    
+<!--     인터셉터 설정하기 -->
+   <mvc:interceptors>
+      <mvc:interceptor>
+         <mvc:mapping path="/board/**.do"/>
+         <mvc:mapping path="/recipe/**.do"/>
+         <mvc:mapping path="/store/**.do"/>
+         <mvc:mapping path="/meetup/**.do"/>
+         <mvc:mapping path="/admin/**.do"/>
+         <mvc:exclude-mapping path="/member/loginform.do"/>
+         <mvc:exclude-mapping path="/recipe/main.do"/>
+         <mvc:exclude-mapping path="/store/mainpb.do"/>
+         <mvc:exclude-mapping path="/**/download.do"/>
+         <mvc:exclude-mapping path="/store/downloadpb.do"/>
+         <bean class="kr.co.babmukja.member.controller.AuthInterceptor"/>
+      </mvc:interceptor>
+   </mvc:interceptors>
+    
+    
+    
+    <!-- 트랜잭션 관리 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="insert*" rollback-for="Exception" />
+			<tx:method name="delete*" rollback-for="Exception" />
+			<tx:method name="update*" rollback-for="Exception" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="pCut" expression="execution(public * kr.co.babmukja..service.*Impl.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="pCut"/>
+	</aop:config>
+	
+    <!-- MyBatis -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:config/mybatis/sqlMapConfig.xml"></property>
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="typeAliasesPackage" value="kr.co.babmukja.repository.domain" />
+        <property name="mapperLocations" value="classpath:config/sqlmap/*.xml"></property>
+    </bean>    
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="kr.co.babmukja.repository.mapper" />
+    </bean>
+            
+	<!-- 시작전 디폴트 작업 -->
+   <mvc:annotation-driven> 
+      <mvc:message-converters>
+         <bean class="org.springframework.http.converter.StringHttpMessageConverter">         
+            <property name="supportedMediaTypes">
+               <list>
+                  <value>text/plain; charset=UTF-8</value>
+                  <value>text/html; charset=UTF-8</value>
+               </list>
+            </property>
+         </bean>
+      </mvc:message-converters>
+   </mvc:annotation-driven> 
+   
+	<!-- 리소스 파일 -->
+	<mvc:resources location="/resources/" mapping="/resources/**"/>
+	
+   <mvc:default-servlet-handler/>
+   <mvc:view-resolvers> 
+      <mvc:jsp prefix="/WEB-INF/jsp/" suffix=".jsp"/>
+   </mvc:view-resolvers>
+   
+       <!-- Tiles -->
+    <beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <beans:property name="definitions">
+            <beans:list>
+                <beans:value>classpath:config/tiles/*.xml</beans:value>
+            </beans:list>
+        </beans:property>
+    </beans:bean>        
+    <beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+        <beans:property name="order" value="1" />
+    </beans:bean> 
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

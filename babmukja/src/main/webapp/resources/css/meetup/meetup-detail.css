@@ -1,0 +1,469 @@
+@charset "UTF-8";
+.header {
+	width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 100px;
+	
+}
+
+.headerLeft {
+	
+	/*  background-image:url();*/
+	display: inline-block;
+	border: 1px solid gray;
+	overflow: hidden;
+	position: relative;
+	width: 560px;
+	height: 400px;
+	margin-right: 60px;
+	font-family: 'Nanum Gothic', sans-serif;	
+	background-image: url(../../images/chalkboardback.jpg);
+}
+
+.infoTagContainer {
+	margin-top: 10px;
+	margin-bottom: 13px;
+}
+
+.infoTag {
+	color: white;
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	width: 60%;
+	background: white;
+	border-radius: .4em;
+	background-color:transparent;
+}
+
+.infoTag::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-top-color: white;
+	border-bottom: 0;
+	margin-left: -10px;
+	margin-bottom: -10px;
+}
+
+.pseudo {
+	color: white;
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	width: 60%;
+	background: #7db341;
+	border-radius: .4em;
+}
+
+.pseudo::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-top-color: #7db341;
+	border-bottom: 0;
+	margin-left: -10px;
+	margin-bottom: -10px;
+}
+
+.tagBottom {
+	margin-bottom: 30px;
+	color: #7db341;
+	font-size: 16px;
+	margin-top: 5px;
+}
+
+.title {
+	margin-top: 50px;
+	font-size: 30px;
+	color:white;
+}
+
+.subInfo {
+	margin-top: 55px;
+	border-top: 1px solid gainsboro;
+	border-bottom: 1px solid gainsboro;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.subInfo i{
+	color: #7db341;
+}
+
+.headerRight {
+	display: inline-block;
+	border: 1px solid gray;
+	overflow: hidden;
+	position: relative;
+	width: 560px;
+	height: 400px;
+}
+
+.area {
+	width: 3000px;
+	height: 400px;
+	position: relative;
+}
+
+.area img {
+	float: left;
+	width: 560px;
+	height: 400px;
+}
+
+.tabContainer {
+	margin: 70px auto;
+	width: 1200px;
+}
+
+.selectTab {
+	text-align: center;
+	border-collapse: collapse;
+}
+
+.selectTab td {
+	border: 1px solid gainsboro;
+	width: 238px;
+	height: 50px;
+	font-size: 20px;
+	box-sizing: border-box;
+}
+
+.tabContainer .tabPanel {
+	width: 100%;
+	background-color: white;
+	box-sizing: border-box;
+}
+
+.tabPanel {
+	display: none;
+}
+
+.tag {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 25px;
+	margin-top: 25px;
+	color:white;
+}
+
+.writeIntro {
+	display: inline-block;
+	font-size: 30px;
+	width: 95px;
+	height: 50px;
+	margin-top: 30px;
+	margin-left: 45%;
+	text-align: center;
+	line-height: 30px;
+}
+
+.fa-plus-circle {
+	color: gainsboro;
+}
+
+.fa-plus-circle:hover {
+	color: #7db341;
+}
+
+#introBox {
+	text-decoration: none;
+	position: relative;
+	border: 1px solid gainsboro;
+	resize: none;
+	width: 800px;
+	height: 500px;
+	margin-left: 17%;
+}
+
+.editDelete {
+	margin-top: 35px;
+	margin-bottom: 20px;
+	display: inline-block;
+	width: 1190px;
+	padding-top:5px;
+	background-color:#fafbfd;
+}
+
+#introEdit {
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+#temp_bar{
+	display: inline-block;
+	height:30px;
+}
+
+#introDelete {
+	margin-left: 10px;
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+
+.saveReturn {
+	margin-top: 35px;
+	margin-bottom: 200px;
+	display: inline-block;
+	width: 1190px;
+}
+
+#introReturn {
+	display: inline-block;
+	margin-bottom: 5px;
+	border: 1px solid gainsboro;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+
+#introSave {
+	margin-left: 10px;
+	display: inline-block;
+	border: 1px solid gainsboro;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+
+#introHeader {
+	margin-left: 330px;
+	display: inline-block;
+	text-align: center;
+	border-bottom: 1px solid white;
+	font-size: 20px;
+}
+
+#introSave:hover {
+	background-color: #7db341;
+	color: white;
+}
+
+#introReturn:hover {
+	background-color: #7db341;
+	color: white;
+}
+
+#introDelete:hover {
+	background-color: #7db341;
+	color: white;
+}
+
+#introEdit:hover {
+	background-color: #7db341;
+	color: white;
+}
+
+.dataBefore {
+	height: 30px;
+}
+
+/*   
+모임 공지 css
+ */
+ 
+
+ /* 가입신청 바 */
+ .requestPermissionContainer{
+ 	margin:0 auto;
+ 	font-size:18px;
+ 	text-align:center;
+ 	margin-bottom:15px;
+ }
+ .requestPermission {
+
+    display: block;
+    border: 1px solid gainsboro;
+    width: 140px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    margin:0 auto;
+    margin-bottom:10px;
+    font-size:18px;
+    margin-top:20px;
+}
+
+.requestPermission:hover {
+    background-color: #7db341;
+    color: white;
+}
+
+ .album_container{
+     padding:6px;
+     margin-top: 15px;
+     width: 1190px;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     grid-column-gap: 6px;
+     grid-row-gap: 6px;
+     box-sizing: border-box;
+        }
+        .album_container > div{
+            
+            height:287.5px;
+            
+        }
+ /*list 나오는 부분  */       
+.board_list_container {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  position : relative;
+  z-index : 05400;
+}
+.board_list_title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 30px;
+}
+.list_insert_button {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.list_insert_button a {
+  color: #7db341;
+}
+.list_insert_button a:hover {
+  font-size: 18px;
+}
+.board_list_count_insert {
+  display: flex;
+}
+.board_list_count {
+  font-weight: bold;
+}
+.board_list_count span {
+  color: #7db341;
+}
+.board_list table,
+th,
+td {
+  text-align: center !important;
+  border: 1px solid rgba(220, 220, 220, 0.61);
+  border-collapse: collapse;
+  width: 1190px;
+  height: 55px;
+  margin-bottom: 20px;
+  border-left: none;
+  border-right: none;
+  color: rgb(81, 81, 81);
+  font-size:18px;
+}
+.board_list a {
+  color: rgb(81, 81, 81);
+}
+.board_list a:hover {
+    font-size: 20px;
+    border-bottom: 1px solid rgb(81, 81, 81);
+}
+.board_list_page {
+  font-size: 18px;
+  color: rgb(81, 81, 81);
+}        
+ .detail_member_container{
+            padding:6px;
+            margin-top: 15px;
+            width: 1190px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-column-gap: 6px;
+            grid-row-gap: 6px;
+            box-sizing: border-box;
+        }
+        .detail_member_container > div{
+            border:1px solid gainsboro;
+            
+            height:287.5px;       
+        }
+
+		.profile_picture_container{
+		 	margin:0 auto;
+            margin-top:20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+			overflow: hidden;
+		}
+		
+        #profile_picture{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid gainsboro;
+            transition: .7s;
+        }
+        
+        #profile_picture:hover{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid gainsboro;
+            transform: scale(1.3, 1.3);
+            
+        }
+        .detail_member_name{
+            margin: 0 auto;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .detail_member_regDate_container{
+            margin-top:17px;
+            border-top:1px solid gainsboro;
+            border-bottom: 1px solid gainsboro;
+            padding:5px;
+            background: #7db341;
+            height: 30px;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            color:white;
+        }
+
+        .detail_member_name > div{
+            border:1px solid black;
+        }
+        .detail_member_regDate_container > div:nth-child(1){
+            padding-left: 5px;
+            
+        }
+        
+        .detail_member_regDate_container > div:nth-child(2){
+            text-align: center;
+        }
+        .detail_member_info >div:nth-last-child() >i{
+            margin-top:100px;
+        }
+        .detail_member_message_container{
+            margin-top: 14px;
+            text-align: center;
+        }
+        .fa-envelope{
+            font-size:34px;
+        }        

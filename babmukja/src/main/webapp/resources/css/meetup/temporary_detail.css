@@ -1,0 +1,363 @@
+.header {
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+
+.headerLeft {
+    background-image: url(../../images/marble2.jpg);
+    display: inline-block;
+    border: 1px solid gainsboro;
+    overflow: hidden;
+    position: relative;
+    width: 560px;
+    height: 400px;
+    margin-right: 60px;
+    box-shadow: 10px 10px 20px 3px gray;
+    ;
+}
+
+.infoTagContainer {
+
+    margin-top: 10px;
+    margin-bottom: 13px;
+}
+
+.infoTag {
+
+    color: white;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    width: 60%;
+    background: white;
+    border-radius: .4em;
+}
+
+
+.infoTag::after {
+
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: white;
+    border-bottom: 0;
+    margin-left: -10px;
+    margin-bottom: -10px;
+}
+
+.pseudo {
+
+    color: white;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    width: 60%;
+    background: #7db341;
+    border-radius: .4em;
+}
+
+.pseudo::after {
+
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #7db341;
+    border-bottom: 0;
+    margin-left: -10px;
+    margin-bottom: -10px;
+}
+
+.tagBottom {
+    margin-bottom: 30px;
+}
+
+.title {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.subInfo {
+    margin-top: 55px;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+
+
+
+
+.headerRight {
+
+    display: inline-block;
+    border: 1px solid black;
+    overflow: hidden;
+    position: relative;
+    width: 560px;
+    height: 400px;
+    box-shadow: 10px 10px 20px 3px gray;
+}
+
+
+.area {
+    width: 3000px;
+    height: 400px;
+    position: relative;
+}
+
+.area img {
+    float: left;
+    width: 600px;
+    height: 400px;
+}
+
+.tabContainer {
+    margin: 70px auto;
+    width: 1200px;
+}
+
+.selectTab {
+    text-align: center;
+    border-collapse: collapse;
+
+}
+
+
+.selectTab td {
+    border: 1px solid gainsboro;
+    width: 238px;
+    height: 50px;
+    font-size: 20px;
+    box-sizing: border-box;
+
+
+}
+
+
+
+.tabContainer .tabPanel {
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+
+}
+
+
+
+.tabPanel {
+    display: none;
+}
+
+.tag {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.writeIntro {
+
+    display: inline-block;
+    border: 1px solid gainsboro;
+    width: 70px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 93%;
+    text-align: center;
+    line-height: 30px;
+}
+
+.writeIntro:hover {
+    background-color: #7db341;
+    color: white;
+}
+
+#introHeader {
+    margin-top: 60px;
+    width: 800px;
+    height: 40px;
+    text-align: center;
+
+    border-bottom: 1px solid white;
+    margin-left: 17%;
+    font-size: 20px;
+}
+
+#introBox {
+    text-decoration: none;
+    position: relative;
+    border: 1px solid gainsboro;
+    resize: none;
+    width: 800px;
+    height: 500px;
+
+    margin-left: 17%;
+}
+
+#introSave {
+    display: block;
+    border: 1px solid gainsboro;
+    width: 70px;
+    height: 30px;
+
+    text-align: center;
+    line-height: 30px;
+    margin-left: 78%;
+}
+
+#introSave:hover {
+    background-color: #7db341;
+    color: white;
+}
+
+ /*   
+모임 공지 css
+ */
+ 
+ .noticeListContainer{
+    margin: 0 auto;
+    margin-top:30px;
+    width:1180px;
+    }
+    
+    
+    .noticeListHeader{
+    width:1180px;
+    height:50px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid gainsboro;
+    display:grid;
+    grid-template-columns: 11% 45% 15% 17% 12%;
+    text-align: center;
+       
+    }
+    .noticeListHeader>div{
+        display: grid;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+        font-weight: bold;
+    }
+    .noticeList{
+        width:1180px;
+        height:45px;
+        display:grid;
+        border-bottom: 1px solid gainsboro;
+        grid-template-columns: 11% 45% 15% 17% 12%;
+        text-align: center;
+           
+        }
+        .noticeList> div{
+            display: grid;
+            text-align: center;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .writeNotice {
+
+            display: inline-block;
+            border: 1px solid gainsboro;
+            width: 70px;
+            height: 30px;
+            margin-top: 30px;
+            margin-left: 93%;
+            text-align: center;
+            line-height: 30px;
+        }
+        .album_container{
+            padding:6px;
+            border: 1px solid black;
+            margin-top: 15px;
+            width: 1190px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-column-gap: 6px;
+            grid-row-gap: 6px;
+            box-sizing: border-box;
+        }
+        .album_container > div{
+            border:1px solid black;
+            background-color: tomato;
+            height:287.5px;
+            
+        }
+
+        .detail_member_container{
+            padding:6px;
+            border: 1px solid black;
+            margin-top: 15px;
+            width: 1190px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-column-gap: 6px;
+            grid-row-gap: 6px;
+            box-sizing: border-box;
+        }
+        .detail_member_container > div{
+            border:1px solid gainsboro;
+            
+            height:287.5px;       
+        }
+
+        #profile-picture{
+            margin:0 auto;
+            margin-top:20px;
+            
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid gainsboro;
+            overflow: hidden;
+        }
+        .detail_member_name{
+            margin: 0 auto;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .detail_member_regDate_container{
+            margin-top:17px;
+            border-top:1px solid gainsboro;
+            border-bottom: 1px solid gainsboro;
+            padding:5px;
+            background: #7db341;
+            height: 20px;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            color:white;
+        }
+
+        .detail_member_name > div{
+            border:1px solid black;
+        }
+        .detail_member_regDate_container > div:nth-child(1){
+            padding-left: 5px;
+            
+        }
+        
+        .detail_member_regDate_container > div:nth-child(2){
+            text-align: center;
+        }
+        .detail_member_info >div:nth-last-child() >i{
+            margin-top:100px;
+        }
+        .detail_member_message_container{
+            margin-top: 14px;
+            text-align: center;
+        }
+        .fa-envelope{
+            font-size:34px;
+        }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace="kr.co.babmukja.repository.mapper.CommentMapper">
+
+   <select id="commentCount" resultType="int">
+        select
+            count(*)
+        from tb_notice_comment
+    </select>
+    <select id="commentSelectByNo" resultType="int">
+        select
+            regdate, notice_comment_no, content, secret_at, mem_no, notice_no
+        from tb_notice_comment
+        where notice_comment_no = #{noticeCommentNo}
+    </select>
+    
+    <select id="commentList"  parameterType="int" resultType="Comment">
+    select *
+	from tb_notice_comment
+	where notice_no = #{noticeNo}
+	order by notice_comment_no desc
+    </select>
+    <insert id="commentInsert" parameterType="Comment">
+        insert into tb_notice_comment 
+        (regdate, content, secret_at, mem_no, notice_no)
+        values(now(), #{content}, 2, #{memNo}, #{noticeNo}) 
+    </insert>   
+    <update id="commentUpdate" parameterType="Comment">
+       update tb_notice_comment
+            set content = #{content}
+       where notice_comment_no = #{noticeCommentNo}
+    </update>
+    
+    <delete id="commentDelete" parameterType="int">
+        delete
+		from tb_notice_comment
+		where notice_comment_no = #{noticeCommentNo}
+    </delete>
+</mapper>

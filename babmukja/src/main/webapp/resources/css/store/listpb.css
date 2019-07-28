@@ -1,0 +1,268 @@
+.pb_list_container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.pb_list_images {
+    height: 100%;
+}
+
+.pb_list_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2em;
+    position: relative;
+    height: 100%;
+}
+
+.pb_list_product_img {
+	color: black;
+}
+
+.pb_list_product_img > img {
+    width: 100%;
+    border-radius: 5px;
+    height: 250px;
+   	cursor: pointer;
+}
+
+.pb_list_product_img > img:hover {
+	opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+.pb_list_product_title {
+    margin-top: -5px;
+    font-size: 20px;
+    overflow: hidden;
+    font-weight: bold;
+    
+}
+
+.pb_list_product_price {
+    margin-top: -35px;
+    font-size: 20px;
+    font-weight: bold;
+    color: tomato;
+}
+
+.pb_list_product_rating {
+    margin-top: -10px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.pb_list_title_con {
+	width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+}
+
+.pb_list_title {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 130px;
+    width: 200px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.pb_list_selectbox {
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none;
+    border: 0;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+   	CURSOR: pointer;
+}
+
+.pb_list_selectbox label {
+	color : white;
+}
+
+.pb_list_selectbox select {
+	color : white;
+}
+
+.pb_list_search {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.pb_list_product_text {
+    text-align: center;
+    CURSOR: pointer;
+}    
+
+#pb_store_popular_product_rating_star {
+    display : inline-block;
+    width: 25px;
+    height: 24px;
+	background: url(/babmukja/resources/images/star5.png) no-repeat;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+ 
+#namanyay-search-box {
+background: #eee;
+padding:10px;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:260px;
+outline: 0;
+ }
+
+#namanyay-search-box:focus {
+	    border-color: #7db341;
+    transition: border-color 0.5s ease-in-out;
+    
+}
+
+ #searchicon {
+    background:#7db341;
+    color:white;
+    font: 'trebuchet ms', trebuchet;
+    padding:10px 20px;
+    border-radius:0 5px 5px 0;
+    -moz-border-radius:0 5px 5px 0;
+    -webkit-border-radius:0 5px 5px 0;
+    -o-border-radius:0 5px 5px 0;
+    border:0 none;
+    font-weight:bold;
+ }
+
+ .pb_search_con {
+     margin-top: -10px;
+ }
+
+ .page {
+     font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+ }
+
+.pageLink {
+	color: black;
+}
+
+.searchNameBTN {
+    outline: 0;
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+}
+
+.likeheart {
+    height: 25px;
+	margin-left: 20px;
+}
+
+.likeheartCnt {
+	margin-left : 5px;
+}
+
+#viewCntIcon {
+	margin-left: 20px;
+	margin-top: 5px;	
+}
+
+.PBviewCnt {
+	margin-left: 5px;	
+}
+
+
+.review-pagination {
+	display: inline-block;
+    border: 1px solid #7db341;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.review-pagination:link {
+    text-decoration: none;
+    color: #7db341;
+}
+
+.review-pagination:visited {
+    text-decoration: none;
+    color: #7db341;
+}
+
+.review-pagination:hover {
+	background-color : #7db341;
+	color: white;
+}
+
+.this-review-page {
+	display: inline-block;
+    width: 27px;
+    height: 27px;
+    margin: 5px;
+    margin-bottom: 10px;
+	background :#7db341;
+	color : white;
+	border-radius: 5px;
+    font-size: 19px;
+    font-weight: bold;
+}
+	
+.pageList {
+    display: flex;
+    justify-content: center;	
+}
+
+.right-arrow {
+    width: 23px;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+

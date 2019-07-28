@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.babmukja.repository.mapper.MemberMapper">
+	<resultMap id="memberMap" type="member">
+		<result column="mem_no" property="memNo" />
+		<result column="mem_name" property="memName" />
+		<result column="mem_phone" property="memPhone" />
+		<result column="mem_email" property="memEmail" />
+		<result column="mem_nickname" property="memNickname" />
+		<result column="mem_pass" property="memPass" />
+		<result column="post_no" property="postNo" />
+		<result column="addr_default" property="addrDefault" />
+		<result column="addr_detail" property="addrDetail" />
+		<result column="manager_at" property="managerAt" />
+		<result column="mem_img_orgname" property="memImgOrgname" />
+		<result column="mem_img_sysname" property="memImgSysname" />
+		<result column="sign_date" property="signDate" />
+		<result column="last_date" property="lastDate" />
+		<result column="social_at" property="socialAt" />
+		<result column="point" property="point" />
+		<result column="grade_no" property="gradeNo" />
+		<result column="mem_img_path" property="memImgPath" />
+		<result column="recipe_Cnt" property="recipeCnt" />
+		<result column="selling_Cnt" property="sellingCnt" />
+		<result column="total_buy" property="totalBuy" />
+		<result column="total_sel" property="totalSel" />
+		<result column="certification" property="certification" />
+	</resultMap>
+
+	<!-- 로그인 (암호화 적용) -->
+	<select id="selectLogin" parameterType="member" resultMap="memberMap">
+		select *
+		from tb_member
+		where mem_email = #{memEmail}
+	</select>
+
+	<!-- 회원가입 -->
+	<insert id="insertMember" parameterType="member">
+		insert into tb_member (
+		mem_name, mem_email, mem_phone, mem_nickname, mem_pass,
+		post_no, addr_default, addr_detail, manager_at, social_at
+		)
+		values (
+		#{memName}, #{memEmail}, #{memPhone}, #{memNickname}, #{memPass},
+		#{postNo}, #{addrDefault}, #{addrDetail}, 0 , 0
+		)
+	</insert>
+	
+	<!-- 카카오 회원가입 -->
+	<insert id="insertSocialMember" parameterType="member">
+		insert into tb_member(mem_name, mem_email, social_at, mem_nickname)
+		values ( #{memName}, #{memEmail}, #{socialAt}, #{memNickname})
+	</insert>
+	
+	<!-- 카카오 닉네임 설정 -->
+	<update id="updateSocialNickname" parameterType="member">
+		update tb_member
+		   set mem_nickname = #{memNickname}
+		 where mem_email = #{memEmail}
+	</update>
+	
+	<!-- 소셜 로그인 여부 -->
+	<select id="selectCheckSocialAt" parameterType="String" resultType="member">
+		select social_at
+		from tb_member
+		where mem_email = #{memEmail}
+	</select>
+
+	<!-- 닉네임 중복체크 -->
+	<select id="selectCheckNickName" parameterType="String" resultType="int">
+		select count(*)
+		from tb_member
+		where mem_nickname = #{memNickname}
+	</select>
+
+	<!-- 이메일 중복체크 -->
+	<select id="selectCheckEmail" parameterType="String" resultType="int">
+		select count(*)
+		from tb_member
+		where mem_email = #{memEmail}
+	</select>
+	
+	<!-- 전화번호 중복체크 -->
+	<select id="selectCheckPhone" parameterType="String" resultType="int">
+		select count(*)
+		from tb_member
+	   where mem_phone = #{memPhone}
+	</select>
+
+	<!-- 이메일 인증 -->
+	<update id="updateEmailVerify" parameterType="String">
+		update tb_member
+		set verify = 1
+		where mem_email = #{memPhone}
+	</update>
+
+	<!-- 아이디 찾기 -->
+	<select id="selectSearchId" parameterType="member" resultType="String">
+		select mem_email
+		from tb_member
+		where mem_name = #{memName}
+		and mem_phone = #{memPhone}
+	</select>
+
+	<!-- 인증번호 등록 -->
+	<update id="updateCertification" parameterType="member">
+		update tb_member
+		set certification = #{certification}
+		where mem_email = #{memEmail} 
+		   or mem_phone = #{memPhone}
+	</update>
+
+	<!-- 인증번호 확인 -->
+	<select id="selectConfirmCertification" parameterType="member" resultType="int">
+		select count(*)
+		from tb_member
+		where certification = #{certification}
+		and mem_phone = #{memPhone} 
+		 or mem_email = #{memEmail}
+	</select>
+	
+	<!-- email 인증번호 확인 -->
+	<select id="selectConfirmCertificationByEmail" parameterType="int" resultType="int">
+		select certification
+		  from tb_member
+		 where mem_no = #{memNo}
+	</select>
+
+	<!-- email 인증번호 확인 -->
+	<select id="selectMemnoByEmail" parameterType="String" resultType="int">
+		select mem_no
+		  from tb_member
+		 where mem_email = #{memEamil}
+	</select>
+
+	<!-- 비밀번호 재설정 -->
+	<update id="updateResetPass" parameterType="member">
+		update tb_member
+		   set mem_pass = #{memPass}
+		 where mem_email = #{memEmail} 
+		    or mem_phone = #{memPhone}
+	</update>
+
+
+	
+	<!-- 우중 -->
+	<select id="searchMemberByNick" parameterType="String" resultMap="memberMap">
+		select * 
+		  from tb_member
+		 where mem_nickname like concat('%',#{nick},'%')
+
+	</select>
+	
+	<select id="searchMemberByNickForMypage" parameterType="String" resultMap="memberMap">
+		SELECT *,
+		    (select count(*) from tb_recipe r where r.mem_no = m.mem_no and m.mem_nickname = #{nick}) `recipe_cnt`,
+		    (select count(*) from tb_recipe_follow f where f.follow_mem_no = m.mem_no and m.mem_nickname = #{nick} and f.follow_status = 'Y') `follower`,
+		    (select count(*) from tb_recipe_follow f where f.follower_mem_no = m.mem_no and m.mem_nickname = #{nick} and f.follow_status = 'Y') `follow`
+		  FROM tb_member m
+		 where mem_nickname = #{nick}
+	</select>
+	
+	<update id="updateMemberProfile" parameterType="member">
+		update tb_member
+		  set mem_img_orgname = #{memImgOrgname},
+		      mem_img_sysname = #{memImgSysname},
+		      mem_img_path = 	#{memImgPath}
+		where mem_nickname = #{memNickname}
+	</update>
+	
+	<select id="selectFollowStatus" parameterType="recipefollow" resultType="String">
+		select follow_status
+		  from tb_recipe_follow
+		 where follow_mem_no = #{followMemNo}
+           and follower_mem_no = #{followerMemNo}
+	</select>
+	
+	<insert id="insertScrapbook" parameterType="Scrapbook">
+		insert into tb_scrap (mem_no, imgpath, title) values(#{memNo},#{imgPath},#{title});
+	</insert>
+	
+	<select id="selectScrapbookListByNo" parameterType="int" resultType="Scrapbook">
+		select *,(select group_concat(c.content SEPARATOR  ' ') from tb_scrap_content c where c.scrap_no = s.scrap_no) 'content'
+		  from tb_scrap s
+		 where mem_no = #{memNo}
+	</select>
+	
+</mapper>

@@ -1,0 +1,719 @@
+@charset "UTF-8";
+#body{
+    width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    min-height: 1000px;
+    margin-top:130px;
+}
+#left-body{
+    height: 100%;
+    border-right: 1px solid gainsboro;
+}
+#right-body{
+    position: sticky;
+    top:50px;
+    height: 950px;
+}
+#content-wrapper{
+    padding: 20px;
+}
+#content-info{
+    height: 120px;
+}
+#writer-info{
+    height: 700px;
+}
+#share-button{
+    padding-top : 10px;
+}
+.recipeScrap {
+	width: 120px;
+    padding: 3px;
+    border : 0px;
+    margin-top: 15px;
+    background : #eee;
+    color : #bbb;
+    border-radius: 5px;
+}
+.recipeScrap:hover {
+	background: #7db341;
+    color:white;
+}
+#likeNo{
+    width: 120px;
+    padding: 3px;
+    border : 0px;
+    margin-top: 15px;
+    background: #7db341;
+    color:white;
+    border-radius: 5px;
+}
+#likeYes{
+    width: 120px;
+    padding: 3px;
+    border : 0px;
+    margin-top: 15px;
+    background : #eee;
+    color : #bbb;
+    border-radius: 5px;
+}
+#likeLogin{
+    width: 120px;
+    padding: 3px;
+    border : 0px;
+    margin-top: 15px;
+    background : #eee;
+    color : #bbb;
+    border-radius: 5px;
+}
+#likeYes:hover{
+    background: #7db341;
+    color:white;
+}
+#likeNo:hover{
+     background : #eee;
+     color : #bbb;
+}
+#likeLogin:hover{
+    background: #7db341;
+    color:white;
+}
+#content-button-wrapper > button {
+	cursor : pointer;
+}
+#content-button-wrapper > button > i{
+	font-size : 18px;
+}
+#content-button-wrapper > button > b{
+    font-size : 18px;
+    margin-left : 5px;
+    line-height: 40px;
+    font-weight: lighter;
+}
+#content-button-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+#profile-wrapper{
+    height: 100px;
+    display: grid;
+    grid-template-columns: 30% 50% 20%;
+}
+
+#profile-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+}
+#profile-id{
+    font-size: 16px;
+    margin-top: 10px;
+    text-align:center;
+}
+#profile-id > div:nth-child(2){
+    font-size: 15px;
+}
+.follow:focus {
+	outline : none;
+}
+#follow {
+    height: 35px;
+    width:52px;
+    margin-top: 20px;
+    border : 0;
+    background : #eee;
+    color: #777;
+    border-radius: 5px;
+    font-size : 13px;
+}
+#followNo {
+	height: 35px;
+	width: 52px;
+    margin-top: 20px;
+    border : 0;
+    background : #7db341;
+    color: white;
+    border-radius: 5px;
+    font-size : 13px;
+}
+#followLogin {
+	height: 35px;
+	width: 52px;
+    margin-top: 20px;
+    border : 0;
+    background : #eee;
+    color: #777;
+    border-radius: 5px;
+    font-size : 13px;
+}
+#follow:hover{
+    background : #7db341;
+    color: white;
+}
+#followNo:hover{
+    background : #eee;
+    color: #777;
+}
+#followLogin:hover{
+    background : #7db341;
+    color: white;
+}
+#writer-post{
+    height: 250px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
+#writer-post > a >img{
+    width:100%;
+    height: 100%;
+}
+#post-img1{
+    border-radius: 5px 0 0 0;
+}
+#post-img2{
+    border-radius: 0 5px 0 0;
+}
+#post-img3{
+    border-radius: 0 0 0 5px;
+}
+#post-img4{
+    border-radius: 0 0 5px 0;
+}
+#more-post{
+    width: 100%;
+    border-radius : 0 0 10px 10px;
+    height: 40px;
+    font-size: 20px;
+    border : 0;
+    background : #7db341;
+    color : white;
+    font-weight: bolder;
+    cursor: pointer;
+    transition : .3s;
+}
+#go-back{
+	margin-top : 60px;
+    width: 100%;
+    background : white;
+    border : none;
+    height: 40px;
+    font-size: 16px;
+    color : rgb(81,81,81);
+    cursor: pointer;
+    transition : .3s;
+	text-align : right;
+}
+#more-post:hover{
+    background: tomato;
+    height: 60px;
+}
+#go-back:hover{
+	color : #7db341;
+}
+#go-back:focus{
+	outline : none;
+}
+#post-info{
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    font-size: 18px;
+    color: rgb(81,81,81);
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+.keyword-wrapper{
+    color: white;
+    background : #7db341;
+    border-radius: 7px;
+    padding-left : 5px;
+    padding-right: 5px;
+    margin-right: 3px;
+    float:left;
+}
+#post-container{
+    margin-bottom:15px;
+}
+.post-main-img{
+    width: 100%;
+    height: 600px;
+}
+.post-thumbs{
+    margin-top:10px;
+    height: 130px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.post-thumbs img{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius : 50px;
+    margin-right: 10px;
+}
+.post-content{
+    color:rgb(81,81,81);
+}
+#a-button {	
+	text-align : right;
+}
+#a-button > a {
+	color:rgb(81,81,81);
+}
+	
+#reviewStars-input input:checked ~ label, #reviewStars-input label, 
+#reviewStars-input label:hover, #reviewStars-input label:hover ~ label,
+#reviewStarsinput input:checked ~ label, #reviewStarsinput label, 
+#reviewStarsinput label:hover, #reviewStarsinput label:hover ~ label {
+    background-image : url('http://positivecrash.com/wp-content/uploads/ico-s71a7fdede6.png');
+    background-size :21px;
+    background-repeat : no-repeat;
+}
+  
+#reviewStars-input {
+   position : relative; 
+   left: -680px;
+   top: 40px;
+ }
+
+#reviewStarsinput input {
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;    
+    width: 20px;
+    height: 20px;    
+    position: absolute;
+    top: 0px; 
+    z-index: 0;
+}
+  #reviewStars-input input {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;    
+    width: 20px;
+    height: 20px;    
+    position: relative;
+    top: 0;  
+    z-index: 0; 
+  }
+  
+  #reviewStars-input input:checked ~ label {
+    background-position: 0 -20px;
+    width: 20px;
+    height: 20px;
+  }
+   #reviewStarsinput input:checked ~ label {
+    background-position: 0 -20px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: -20px;
+  } 
+  
+  #reviewStarsinput label {
+    background-position: 0 0;
+    width: 20px;
+    height: 20px;
+    float: right;  
+    position: relative;
+    z-index: 1;
+    left : -20px;
+    margin-right: 5px;   
+  } 
+  #reviewStars-input label {
+    background-position: 0 0;
+    width: 20px;
+    height: 20px;
+    float: right;    
+    margin-right: 5px;    
+    position: relative;
+    z-index: 1;
+  }
+  
+   #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+    background-position: 0 -19px;
+    height: 20px;
+    width: 20px;
+  }
+  #reviewStarsinput label:hover, #reviewStars-input label:hover ~ label {
+    background-position: 0 -19px;
+    height: 20px;
+    width: 20px;
+  } 
+
+#comment-header{
+    font-size: 19px;
+    font-weight: bolder;
+    color: rgb(81,81,81);
+}
+
+#comment-header > b{
+    font-size : 30px;
+    color: #7db341;
+}
+#comment-container{
+    border : 1px solid gainsboro;
+}
+#comment-mine{
+    display: flex;
+    justify-content: space-between;
+}
+#comment-mine img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+#comment-nick {
+    font-size: 20px;
+    position: relative;
+    top: 35px;
+    left: -11px;
+}
+
+#comment-login {
+	font-size: 13px;
+    position: relative;
+    top: 40px;
+}
+.comment-input{
+    width: 600px;
+    height: 45px;
+    resize: none;
+   	min-height : 45px;
+   	max-height : 45px;
+}
+.comment-input:focus {
+	outline: none;
+}
+.comment-updateform {
+	width: 500px;
+    height: 50px;
+    resize: none;
+}
+#comment-submit{
+    height: 50px;
+    color: #7db341;
+    border : 0;
+    background: white;
+    cursor: pointer;
+    position:relative;
+    top:-10px;
+}
+#comment-submit:focus {
+	outline :none;
+}
+#comment-submit > img, #comment-nope > img {
+    width: 40px;
+    height: 45px;
+    position: relative;
+    left: -3px;
+    top : -10px;
+}
+.comment-exit {	
+    color: #7db341;
+    border : 0;
+    background: white;
+    cursor: pointer;
+    font-size : 30px;
+    position: relative;
+    top: -15px;
+    left: -5px;
+}
+.comment-exit:focus {
+	outline : none;
+}
+#comment-nope {
+	height: 50px;
+    color: #7db341;
+    border : 0;
+    background: white;
+    cursor: pointer;
+    position:relative;
+    top:-10px;
+}
+#comment-nope:focus {
+	outline:none;
+}
+.comment-update {
+	height: 50px;
+    color: #7db341;
+    border : 0;
+    background: white;
+    cursor: pointer;
+    display : inline-block;
+    position: relative;
+    top: -10px;
+}
+.comment-update:focus {
+	outline : none;
+}
+.comment-update > img {
+    width: 30px;
+    height: 40px;
+    position: relative;
+    top: -12px;
+}
+#comment-other{
+    border-top: 1px solid gainsboro;
+    margin-top: 10px;
+}
+#comment-page {
+	display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    border: 1px solid #7db341;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.pagination > a {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: 6px;
+}
+.pagination a:link {
+	text-decoration: none;
+    color: #7db341;
+}
+.pagination a:visited {
+    text-decoration: none;
+    color: #7db341;
+}
+.pagination:hover {
+	background : #7db341;	
+}
+.pagination:hover a{
+	color : white;
+}
+.comment-prev,.comment-next {
+	display: inline-block;
+	width : 35px;
+	height : 25px;
+	margin: 5px;
+    margin-bottom: 10px;
+}
+.right-arrow, .left-arrow {
+	width : 15px;
+}
+.current-page {
+	display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin: 5px;
+    margin-bottom: 10px;
+    background: #7db341;
+    color: white;
+    border-radius: 5px;
+}
+
+.current-page > a{
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.current-page > a:hover {
+	color: white;
+}
+
+.other-profile{
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+}
+.comment-other-wrapper{
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+.other-content-wrapper{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.other-id{
+    color: rgb(30,30,30);
+    font-weight: bolder;
+}
+
+.other-date{
+    font-size: 13px;
+    color: gray;
+}
+#post-body{
+	position: relative;
+}
+#updateComment, .deleteComment {
+	border : none;
+	background : white;
+	color : gray;
+	font-size : 10px;
+}
+
+#updateComment:hover, .deleteComment:hover {
+	color : #7db341;
+}
+
+button{
+	outline:none;
+}
+
+.check-stars{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 100%;
+    width:120px;
+    margin-bottom: 15px;
+}
+.check-backStar{
+    background: url(/babmukja/resources/images/star5-gray.png);
+    width : 100%;
+    height: 23px;
+}
+.check-frontStar-wrapper{
+    width: 120px;
+    position: absolute;
+}
+.check-frontStar{
+    background: url(/babmukja/resources/images/star5.png) no-repeat;
+    height: 23px;
+}
+
+.stars{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 100%;
+    width:120px;
+    margin-bottom: 15px;
+}
+.backStar{
+    background: url(/babmukja/resources/images/star5-gray.png);
+    width : 100%;
+    height: 23px;
+}
+.frontStar-wrapper{
+    width: 120px;
+    position: absolute;
+}
+.frontStar{
+    background: url(/babmukja/resources/images/star5.png) no-repeat;
+    height: 23px;
+}
+
+
+/* 우중 추가 */
+#modal-container{
+    width: 900px;
+    height: 700px;
+    background: white;
+    display : grid;
+    grid-template-rows: 10% 40% 42% 8%;
+}
+#scrapbook-wrapper-sec1 p{
+    font-size: 25px;
+    text-align: center;
+}
+
+#sec2-img-container{
+	display: block;
+	
+	border : 2px dashed gainsboro;
+    margin: 0 auto;
+    width: 200px;
+    height: 100%;
+}
+#scrapbook-wrapper-sec3{
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+#scrapbook-wrapper-sec3 div{
+    width: 160px;
+    height: 90%;
+    display: inline-block;
+}
+.scrapbook-content{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.scrapbook-content-title{
+    font-size: 15px;
+    padding : 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.scrapbook-content-cover{
+	background-repeat : no-repeat;
+    
+}
+input[name="scrapbook-radio"]{
+    display: block;
+    margin: 0 auto;
+}
+
+#scrapbook-wrapper-sec4{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#scrapbook-wrapper-sec4-button1{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    margin-top:10px;
+    transition: .3s;
+}
+#scrapbook-wrapper-sec4-button2{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    margin-top:10px;
+    margin-left: 10px;
+    transition: .3s;
+}
+#scrapbook-wrapper-sec4-button1:hover{
+    background: #7db341;
+    color:white;
+}
+#scrapbook-wrapper-sec4-button2:hover{
+    background: #7db341;
+    color:white;
+}
+
+
+#waitLoading{
+	position: absolute;
+	background: #fff;
+	opacity : 0.5;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000000;
+	display: flex;
+	align-content: center;
+	justify-content : center;
+}
+

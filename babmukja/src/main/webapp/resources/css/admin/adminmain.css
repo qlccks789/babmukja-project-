@@ -1,0 +1,99 @@
+body{
+    background: gainsboro;
+}
+
+
+#main{
+    background: white;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+#graph{
+    height: 700px;
+    margin: 30px;
+    border : 1px solid gainsboro;
+}
+#graph >h2{
+    color : #7db341;
+    padding: 30px;    
+}
+#info-container {
+    padding : 30px;
+}
+#info-container > div {
+    height: 100px;
+    border : 1px solid gainsboro;
+    box-shadow: 10px 10px 10px 1px lightgray;
+    margin-bottom: 25px;
+}
+
+#info-container > div:nth-child(4){
+    height : 400px;
+}
+#today-sales>div >div:nth-child(1){
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    border: 1px solid gainsboro;
+    background: tomato;
+    padding: 5px;
+}
+#today-sales>div >div:nth-child(2){
+    text-align: center;
+    font-weight: bolder;
+    font-size : 20px;
+    color:rgb(81,81,81);
+    height: 100%;
+    line-height: 50px;
+}
+
+#today-signup{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#today-signup > div{
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    border: 1px solid gainsboro;
+}
+#today-signup> div>div:nth-child(1){
+    background: darkcyan;
+    padding:5px;
+}
+#today-signup> div>div:nth-child(2){
+    padding:5px;
+    color:rgb(81,81,81);
+    font-size: 20px;
+    height: 100%;
+    line-height: 50px;
+}
+#today-signin>div >div:nth-child(1){
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    border: 1px solid gainsboro;
+    background: darkgoldenrod;
+    padding: 5px;
+}
+#today-signin>div >div:nth-child(2){
+    text-align: center;
+    font-weight: bolder;
+    font-size : 20px;
+    color:rgb(81,81,81);
+    height: 100%;
+    line-height: 50px;
+}
+#today-cs > div> div:nth-child(1){
+    
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    background: darkslategrey;
+    padding: 5px;
+}
+#today-cs > div> div:nth-child(2){
+    border: 1px solid gainsboro;
+    padding: 5px;
+    height: 100%;
+}

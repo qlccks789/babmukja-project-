@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+html, body {
+    position: relative;
+  }
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color:#000;
+  margin: 0;
+  padding: 0;
+}
+#main-body{
+  width: 1200px;
+  margin: 0 auto;  
+}
+input[type='text'] {
+	width: 280px;
+    height: 25px;
+    border-radius: 5px;
+    margin-left: 15px;
+    text-align: center;
+    color: #515151;
+}
+input[name='searchTitle'] {
+	margin-left : 28px;
+}
+input[type='text']:focus {
+	outline : none;
+}
+.search-icon > i {
+   margin-left : 5px;
+   font-size: 18px;
+   color: #7db341;
+   cursor : pointer;
+}
+
+.boundary{
+    background: url(../../images/wood.png);
+    background-size: contain;
+    box-shadow: 0px 10px 15px 2px white;
+    height:100px;
+    margin-top:60px;
+}
+#sector3{
+    width: 1200px;
+    background:url(../../images/chalkboardback.jpg);
+    display: grid;
+    grid-template-rows: 60% 40%;
+}
+#sector3-body{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+#sector3-body>div{
+    margin: 5px;
+}
+#sector3-body>div:nth-child(n){
+    background:url(../../images/note4.png) no-repeat;
+    background-size: cover;
+}
+#sector3-body>div:nth-child(2n){
+    background:url(../../images/note3.jpg) no-repeat;
+    background-size: cover;
+}
+#sector3-body>div:nth-child(3n){
+    background:url(../../images/note1.png) no-repeat;
+    background-size: cover;
+}
+#sector3-body>div:nth-child(4n){
+    background:url(../../images/note2.png) no-repeat;
+    background-size: cover;
+}
+.no-search {
+	width: 1200px;
+    height: 500px;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    color : white;
+}
+.profile-container{
+    display: grid;
+    grid-template-rows: 25% 60% 15%;
+    font-family: 'East Sea Dokdo', cursive;
+    font-weight: lighter;
+    font-size : 30px;
+    height: 400px;
+}
+.profile-pic-box{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.profile-picture{
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.profile-name{
+    font-size : 20px;
+}
+.profile-name p{
+	margin-top: 20px;
+	margin-left : 25px;
+}
+.recipe-pic-box img{ 
+    width: 96%;
+    height:200px;
+    overflow:hidden; 
+    margin-top: 15px;
+    margin-left: 5px;
+    
+}
+.recipe-info{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 12px;
+    font-weight: lighter;
+}
+.recipe-info i{
+    padding-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(81,81,81);            
+}
+#searchbox {
+	margin-top : 100px;
+	width: 1200px;
+	height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+#search-input {
+    border-radius: 5px; 
+    width: 500px; height: 50px;
+    font-size: 30px;
+    text-align: center;
+    padding-right: 55px;
+}
+.searchicon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 1;   
+    left: -50px;
+    font-size: 45px;
+    color: #7db341;
+}
+#search-input:focus {
+    outline: none;
+    border: 2px solid #7db341;
+}
+.searchresult {           
+    height: 200px; 
+    font-size: 20px;
+/*     display:none; */
+}        
+li {
+    list-style:none;             
+    font-size:15px;    
+    font-weight: bold;            
+    color :#515151;            
+}   
+.check {    
+    display: inline-block;
+    cursor: pointer;
+}     
+.check img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 7px;
+}
+.iconImg {
+    width: 40px; height: 30px;
+    text-align: center;        
+    margin-right: 7px;   
+}
+#cautionresult, #eventresult, #difficultyresult, 
+#cooktimeresult, #kindcookresult {
+    display: none;
+}
+#keyword-container{    
+    margin: 0 auto;    
+    font-size : 25px;
+    font-family: 'East Sea Dokdo', cursive;
+    margin-bottom : 30px;
+}
+.keyword-wrapper{
+	display : inline-block;
+    margin: 20px 0 20px 0;
+}
+.selectmenuContent::-webkit-scrollbar {
+  background-color: #fff;
+  width:12px
+}
+
+.selectmenuContent::-webkit-scrollbar-track {
+  background-color: white;
+  
+}
+
+.selectmenuContent::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+  border-radius: 20px;
+  border: 2px solid #fff;
+}
+
+.selectmenuContent::-webkit-scrollbar-button {display:none}
+
+.chalkheader{
+	background: url(../../images/chalklistheader.jpg);
+	width: 100%;
+	height: 400px;
+}

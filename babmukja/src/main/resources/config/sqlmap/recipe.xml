@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.babmukja.repository.mapper.RecipeMapper">
+
+ 	<resultMap id="recipeMap" type="recipe">
+		<result column="mem_no" property="memNo" />
+		<result column="mem_Nickname" property="memNickname" />
+		<result column="recipe_no" property="recipeNo" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="viewcnt" property="viewCnt" />
+		<result column="rating" property="rating" />
+		<result column="imgpath" property="imgPath" />
+		<result column="likecnt" property="likeCnt" />
+		<result column="scrapcnt" property="scrapCnt" />
+		<result column="keyword_no" property="keywordNo" />
+	</resultMap> 
+	<resultMap id="keywordMap" type="keyword">
+		<result column="keyword_no" property="keywordNo"/>
+		<result column="keyword_map_no" property="keywordMapNo"/>
+		<result column="keyword" property="keyword"/>
+		<result column="cnt" property="cnt"/>
+	</resultMap>
+	
+	<!-- 레시피 등록 -->
+	<insert id="insertRecipe" parameterType="recipe" useGeneratedKeys="true" keyProperty="recipeNo">
+		insert into tb_recipe(
+					mem_no,title,content,imgpath)
+					values(
+					#{memNo},#{title},#{content},#{imgPath}
+					)
+	</insert>
+	
+	<!-- 레시피 조회 -->
+	<select id="selectRecipe" resultMap="recipeMap">
+		select m.*,r.* 
+		  from tb_member m,tb_recipe r
+		 where m.mem_no = r.mem_no
+		 order by regDate desc
+		 limit 0, 12
+	</select>
+	
+	<!-- 레시피 상세 조회 -->
+	<select id="selectRecipeByNo" parameterType="int" resultMap="recipeMap">
+		select r.*, m.* 
+		  from tb_recipe r, tb_member m 
+		 where r.mem_no = m.mem_no
+		   and recipe_no = #{recipeNo}
+	</select>
+	
+	<!-- 일등 레시피 정보 가져오기 -->
+	<select id="selectWinRecipe" resultType="recipe">
+		select r.*, m.*,k.keyword
+          from tb_recipe r, tb_member m, 
+               tb_recipe_keyword rk, tb_keyword k
+         where r.mem_no = m.mem_no
+           and rk.recipe_no = r.recipe_no
+           and rk.situation = k.keyword_no
+         order by rating desc,
+                  regdate desc		          
+         limit 0,1
+	</select>
+	
+	<!-- 일등 레시피 댓글 정보 가져오기 -->
+	<select id="selectReviewByRate" resultType="RecipeReview">
+		select rw.*,m.*
+          from tb_recipe_review rw, tb_recipe r, tb_member m
+         where r.recipe_no = rw.recipe_no
+           and m.mem_no = rw.mem_no
+           and r.recipe_no = (select recipe_no 
+                                from tb_recipe 
+                               order by rating desc, regdate desc
+                               limit 0,1)
+         order by score desc, regdate desc
+         limit 0,3
+	</select>
+	
+	<!-- 메인 페이지 회원 레시피 목록 -->
+	<select id="selectMemRecipeByRate" resultType="recipe">
+		select *
+	      from tb_recipe
+	     where mem_no = (select mem_no
+			               from tb_recipe 
+			              order by rating desc,
+			                       regdate desc		          
+			              limit 0,1)
+	     order by rating desc,
+	              regdate desc
+	     limit 1,3		        
+	</select>
+	
+	<!-- 상세 페이지 회원 레시피 목록 -->
+	<select id="selectRecipeByMem" parameterType="int" resultType="recipe">
+		select r.*, m.*
+		  from tb_recipe r, tb_member m
+		 where r.mem_no = m.mem_no
+		   and r.mem_no = #{memNo}
+		 order by regDate desc
+		 limit 0,4
+	</select>
+
+	<!-- 조회수 증가 -->
+	<update id="addViewCnt" parameterType="int">
+		update tb_recipe
+		   set viewcnt = viewcnt + 1
+		 where recipe_no = #{recipeNo}
+	</update>	
+	
+	<!-- 레시피 팔로우 기능 -->
+	<insert id="insertRecipeFollow" parameterType="recipefollow">
+		insert tb_recipe_follow(follow_mem_no, follower_mem_no)
+		values(#{followMemNo}, #{followerMemNo})		
+	</insert>
+	
+	<select id="selectCountFollow" parameterType="recipefollow" resultType="int">
+		select count(*) 
+  		  from tb_recipe_follow 
+         where follow_mem_no = #{followMemNo}
+           and follower_mem_no = #{followerMemNo}	
+	</select>
+	
+	<select id="selectFollowStatus" parameterType="recipefollow" resultType="String">
+		select follow_status
+		  from tb_recipe_follow
+		 where follow_mem_no = #{followMemNo}
+           and follower_mem_no = #{followerMemNo}
+	</select>
+	
+	<update id="updateRecipeFollow" parameterType="recipefollow">
+		update tb_recipe_follow
+		   set follow_status = #{followStatus}
+		 where follow_mem_no = #{followMemNo}
+           and follower_mem_no = #{followerMemNo} 			   
+	</update>
+	
+	<!-- 레시피 좋아요 기능 -->	
+	<select id="selectCountLike" parameterType="recipelike" resultType="int">
+		select count(*) 
+  		  from tb_recipe_like
+         where recipe_no = #{recipeNo}
+           and mem_no = #{memNo}
+	</select>
+	
+	<insert id="insertRecipeLike" parameterType="recipelike">
+       insert into tb_recipe_like(recipe_no, mem_no)
+       values(#{recipeNo}, #{memNo})
+   </insert>
+	
+	<update id="updateLikeCnt" parameterType="int">
+		update tb_recipe
+		   set likecnt = likecnt + 1
+		 where recipe_no = #{recipeNo}
+	</update>
+	
+	<update id="deleteLikeCnt" parameterType="int">
+		update tb_recipe
+		   set likecnt = likecnt - 1
+		 where recipe_no = #{recipeNo}
+	</update>
+	
+	<update id="updateRecipeLike" parameterType="recipelike">
+		update tb_recipe_like
+		   set like_status = #{likeStatus}
+		 where recipe_no = #{recipeNo}
+           and mem_no = #{memNo} 			   
+	</update>
+	
+	<select id="selectLikeStatus" parameterType="recipelike" resultType="String">
+		select like_status
+		  from tb_recipe_like
+		 where recipe_no = #{recipeNo}
+		   and mem_no = #{memNo}
+	</select>
+	
+	<select id="countLikeCnt" resultType="int" parameterType="int">
+		select likecnt
+		  from tb_recipe
+		 where recipe_no = #{recipeNo}
+	</select>
+	
+	<!-- 레시피 수정 -->
+	<update id="updateRecipe" parameterType="recipe">
+		update tb_recipe
+		   set title = #{title},
+		       content = #{content},
+		       imgpath = #{imgPath}
+		 where recipe_no = #{recipeNo}		   
+	</update>  
+	
+	<!-- 레시피 삭제 -->
+	<delete id="deleteRecipe" parameterType="int">
+		delete 
+		  from tb_recipe
+		 where recipe_no = #{recipeNo}
+	</delete>
+	
+	<!-- 레시피 상세 댓글 부분 -->
+	
+	<!-- 댓글 조회 -->
+    <select id="selectReviewByNo" parameterType="page" resultType="RecipeReview">
+    	select r.*, m.*
+    	  from tb_recipe_review r
+    	 inner join tb_member m
+    	    on r.mem_no = m.mem_no
+    	 where recipe_no = #{recipeNo}    	   
+    	 order by recipe_review_no desc
+    	 limit #{index}, 5
+    </select>   
+    
+    <!-- 전체 댓글 수 -->    
+	<select id="selectReviewCount" parameterType="page" resultType="int">
+		select count(*)
+		  from tb_recipe_review v
+		 inner join tb_recipe r
+		    on v.recipe_no = r.recipe_no
+		 where r.recipe_no = #{recipeNo}
+	</select>
+    
+    <!-- 댓글 등록 -->
+    <insert id="insertRecipeReview" parameterType="RecipeReview">    	
+    	insert into tb_recipe_review (
+			recipe_no, content, mem_no, score    	
+    	) values (
+    		#{recipeNo}, #{content}, #{memNo}, #{score}
+     	)
+    <selectKey keyProperty="recipeReviewNo" resultType="int" order="AFTER">
+    	SELECT LAST_INSERT_ID()
+  	</selectKey>
+    </insert>    
+    
+    <!-- 댓글 등록될 때 레시피 평점 수정하기 -->
+    <update id="updateRecipeRating" parameterType="int">
+    	update tb_recipe
+    	   set rating = (select avg(score) 
+    	                   from tb_recipe_review 
+    	                  where recipe_no = #{recipeNo})
+    	 where recipe_no = #{recipeNo}
+    </update>
+    
+    <!-- 댓글 수정 -->
+    <update id="updateRecipeReview" parameterType="RecipeReview">
+    	update tb_recipe_review
+    	   set content = #{content}    	         
+    	 where recipe_review_no = #{recipeReviewNo}
+    </update>
+    
+    <!-- 댓글 하나만 가져오기 -->
+    <select id="selectOneReviewByNo" parameterType="int" resultType="RecipeReview">
+    	select r.*, m.* 
+    	  from tb_recipe_review r
+    	 inner join tb_member m
+    	    on r.mem_no = m.mem_no
+    	 where recipe_review_no = #{recipeReviewNo}
+    </select> 
+    
+	<!-- 댓글 삭제 -->
+	<delete id="deleteRecipeReview" parameterType="int">
+		delete 
+		  from tb_recipe_review
+		 where recipe_review_no = #{recipeReviewNo}
+	</delete>
+	
+	<!-- 레시피 키워드 시작 -->
+	<select id="selectRecipeByKeyword" parameterType="int" resultMap="recipeMap">
+		select r.*, m.mem_nickname
+		  from tb_recipe r
+		 inner join tb_member m
+		    on r.mem_no = m.mem_no
+		 inner join tb_recipe_keyword rk
+		    on rk.recipe_no = r.recipe_no
+		 where 1 = 1
+		    or rk.country = #{no}
+		    or rk.situation = #{no}
+		    or rk.level = #{no}
+		    or rk.type = #{no}
+		 order by r.recipe_no desc
+	</select>
+	
+	<!-- 상위 키워드 출력 (키워드 사용 횟수 기준)-->
+	<select id="selectKeywordMost" parameterType="String" resultType="RecipeKeywordCode">
+		select *, count(*) as cnt 
+		  from tb_recipe_keyword
+		 group by #{string}
+		 order by cnt desc
+		 limit 1
+	</select>
+	
+	<select id="selectKeyword" resultMap="keywordMap">
+		select *
+		  from tb_keyword
+	</select>
+	
+	<!-- 레시피에 키워드 삽입 -->
+	<insert id="insertKeywordToRecipe" parameterType="RecipeKeywordCode">
+		insert into tb_recipe_keyword (country,caution,situation,level,time,type,recipe_no) 
+		values (#{country},#{caution},#{situation},#{level},#{time},#{type}, #{recipeNo})
+	</insert>
+	
+	<select id="selectKeywordByNo" parameterType="int" resultType="RecipeKeywordName">
+		select rk.recipe_no 'recipeNo',
+			   (select keyword from tb_keyword where keyword_no = rk.country) 'country',
+			   (select keyword from tb_keyword where keyword_no = rk.situation) 'situation',
+			   rk.caution 'caution',
+			   (select keyword from tb_keyword where keyword_no = rk.level) 'level',
+			   (select keyword from tb_keyword where keyword_no = rk.time) 'time',
+			   (select keyword from tb_keyword where keyword_no = rk.type) 'type'
+  		from tb_recipe_keyword rk
+  	   where rk.recipe_no = #{no}
+	</select>
+	
+	<select id="selectKeywordByRecipe" parameterType="int" resultType="RecipeKeywordCode">
+		select * 
+		  from tb_recipe_keyword 
+		 where recipe_no = #{recipeNo}
+	</select>
+	
+	<!-- 레시피 키워드 수정 -->
+	<update id="updateKeywordFromRecipe" parameterType="RecipeKeywordCode">
+		update tb_recipe_keyword
+		   set country = #{country},
+		       caution = #{caution},
+		       situation = #{situation},
+		       level = #{level},
+		       time = #{time},
+		       type = #{type}
+		 where recipe_no = #{recipeNo}
+	</update>
+	
+	<!-- 레시피 검색부분 -->
+	<sql id="searchWhere">
+		<if test="searchTitle != null and searchTitle != ''">			 
+            and title like concat('%', #{searchTitle}, '%')          
+		</if>
+		
+		<if test="searchNickname != null and searchNickname != ''">			 
+            and mem_nickname like concat('%', #{searchNickname}, '%')          
+		</if>
+		
+		<if test="caution != null and caution != ''">			 
+            and rk.caution like concat('%', #{caution}, '%')           
+		</if>
+		
+		<if test="situation != null and situation != ''">
+			and rk.situation = #{situation}
+		</if>
+		
+		<if test="level != null and level != ''">
+			and rk.level = #{level}
+		</if>
+		
+		<if test="time != null and time != ''">
+			and rk.time = #{time}
+		</if>
+		
+		<if test="type != null and type != ''">
+			and rk.type = #{type}
+		</if>
+	</sql>	
+	
+	<!-- 레시피 전체목록 가져오기 -->
+	<select id="selectRecipeAll" parameterType="recipepage" resultType="recipepage">
+		select r.*,m.*,(select keyword_no 
+		                  from tb_keyword 
+		                 where keyword_no = rk.country) 'country'
+          from tb_recipe_keyword rk, tb_recipe r, tb_member m
+         where rk.recipe_no = r.recipe_no
+           and m.mem_no = r.mem_no
+      <include refid="searchWhere"/>
+         order by r.regdate desc
+         limit #{pageNo}, 12
+	</select>
+	
+	<!-- 레시피 카테고리별 목록 조회 -->
+	<select id="selectRecipeByCate" parameterType="recipepage" resultType="recipepage">
+		select r.*,m.*,(select keyword_no 
+		                  from tb_keyword 
+		                 where keyword_no = rk.country) 'country'
+          from tb_recipe_keyword rk, tb_recipe r, tb_member m
+         where rk.recipe_no = r.recipe_no
+           and m.mem_no = r.mem_no
+           and rk.country = #{country}
+      <include refid="searchWhere"/>
+         order by r.regdate desc      
+         limit #{pageNo}, 12  
+	</select>
+
+	<!-- (우중) 회원 번호로 레시피 가져오기-->
+	<select id="selectRecipeByMemNo" parameterType="int" resultMap="recipeMap">
+		select m.mem_nickname,r.* from tb_member m,tb_recipe r
+		 where m.mem_no = r.mem_no
+		 	   and m.mem_no = #{memNo}
+		 order by recipe_no asc
+	</select>
+	
+	<!-- (우중) 스크랩북 content 추가 -->
+	<insert id="insertScrapbookContent" parameterType="Scrapbook">
+		insert into tb_scrap_content (scrap_no, content) values(#{scrapNo},#{content})
+	</insert>
+	<insert id="insertRecipeScrap" parameterType="RecipeScrap">
+		insert into tb_recipe_scrap (mem_no, recipe_no, scrap_no) values(#{memNo},#{recipeNo},#{scrapNo})
+	</insert>
+	<select id="selectStatusAll" parameterType="StatusChecker" resultType="StatusChecker">
+		select (select follow_status
+		  		  from tb_recipe_follow 
+		  		 where follow_mem_no = #{followMemNo} 
+		  		   and follower_mem_no = #{followerMemNo} ) `follow_status`,
+		   	   (select like_status
+			      from tb_recipe_like l 
+			     where l.recipe_no = #{recipeNo} 
+			       and mem_no = #{memNo}) `like_status`,
+		   	   (select scrap_status
+		          from tb_recipe_scrap s 
+		         where s.recipe_no = #{recipeNo} 
+		           and mem_no = #{memNo}) `scrap_status`
+  		 from tb_member m
+		where m.mem_no = #{memNo}
+
+	</select>
+	<update id="updateRecipeScrapCnt" parameterType="int">
+		update tb_recipe
+		   set scrapcnt = scrapcnt + 1
+		 where recipe_no = #{no}
+	</update>
+</mapper>

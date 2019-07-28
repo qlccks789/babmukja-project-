@@ -1,0 +1,115 @@
+@charset "UTF-8";
+#menubarContainer{
+    position : fixed;
+    top:0;
+    left : 0;
+    width: 100%;
+    background : rgba(0,0,0,0);
+    margin: 0 auto;
+    padding : 0;
+    transition: .2s;
+    height: 60px;
+    z-index: 250;
+    border-bottom: 1px solid gainsboro;
+}
+
+ul,ol{
+	margin-top:20px !important;
+}
+
+#menuContent>ul {
+    list-style: none ;
+}
+#menuContent a{
+    text-decoration: none;
+    color: rgb(81,81,81);
+}
+#menuContent a:visited{
+    text-decoration: none;
+}
+#menuContent>ul>li{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-left : 25px;
+}
+#menuContent>ul>li>a{
+    transition: .3s;
+}
+#menuContent>ul>li>a:hover{
+    color: #7db341;
+}
+#home{
+    display: flex;
+    font-weight: bolder;
+    justify-content: left;
+    align-content: left;
+    font-size: 45px;
+    color: #7db341;
+    float : left;
+    cursor: pointer;
+}
+#menuContent{
+    float : left;
+}
+
+#sign{
+    display: flex;
+    justify-content: right;
+    align-content: right;
+    position: absolute;
+    top: 1px;
+    right: 20px;
+    height : 100%;
+    padding-top: 5px;
+}
+#sign>a{
+    line-height: 50px ;
+    margin-left:10px ;
+}
+#sign>a:first{
+    border-right: 1px solid #7db341 ;
+}
+#sign>i{
+    color: #7db341 !important;
+}
+.optionalMenubar{
+    position: absolute;
+    width: 100%;
+    top:-300px;
+    height: 60px;
+    border : 1px solid gainsboro;
+    background: white;
+    margin: 0 auto;
+}
+.optionalMenubar ul {
+    position: absolute;
+    left : 190px;
+    list-style: none;
+}
+a{
+    text-decoration: none !important;
+    color: rgb(81,81,81) !important;
+}
+a:visited{
+    text-decoration: none !important;
+}
+a:hover{
+    text-decoration: none !important;
+	underline:none;
+}
+.optionalMenubar li{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-left : 25px;
+}
+.optionalMenubar li > a{
+    transition: .3s;
+}
+.optionalMenubar li > a:hover{
+    color: #7db341;
+}
+#nickName {
+	margin-rigth: 10px;
+}

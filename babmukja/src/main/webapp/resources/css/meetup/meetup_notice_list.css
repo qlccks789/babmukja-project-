@@ -1,0 +1,64 @@
+  /*list 나오는 부분  */       
+.board_list_container {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  position : relative;
+  z-index : 05400;
+}
+.board_list_title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 30px;
+}
+.list_insert_button {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.list_insert_button a {
+  color: #7db341;
+}
+.list_insert_button a:hover {
+  font-size: 18px;
+}
+.board_list_count_insert {
+  display: flex;
+}
+.board_list_count {
+  font-weight: bold;
+}
+.board_list_count span {
+  color: #7db341;
+}
+.board_list table,
+th,
+td {
+  text-align: center !important;
+  border: 1px solid rgba(220, 220, 220, 0.61);
+  border-collapse: collapse;
+  width: 1190px;
+  height: 55px;
+  margin-bottom: 20px;
+  border-left: none;
+  border-right: none;
+  color: rgb(81, 81, 81);
+  font-size:18px;
+}
+.board_list a {
+  color: rgb(81, 81, 81);
+}
+.board_list a:hover {
+    font-size: 20px;
+    border-bottom: 1px solid rgb(81, 81, 81);
+}
+.board_list_page {
+  font-size: 18px;
+  color: rgb(81, 81, 81);
+}        
+        

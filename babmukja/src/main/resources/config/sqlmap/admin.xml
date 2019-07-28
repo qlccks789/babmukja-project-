@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.babmukja.repository.mapper.AdminMapper">
+
+	<resultMap id="MemberMap" type="Member">
+		<result column="mem_no" property="memNo" />
+		<result column="mem_name" property="memName" />
+		<result column="mem_phone" property="memPhone" />
+		<result column="mem_email" property="memEmail" />
+		<result column="mem_nickname" property="memNickname" />
+		<result column="mem_pass" property="memPass" />
+		<result column="post_no" property="postNo" />
+		<result column="addr_default" property="addrDefault" />
+		<result column="addr_detail" property="addrDetail" />
+		<result column="manager_at" property="managerAt" />
+		<result column="img_orgname" property="imgOrgname" /> 
+		<result column="img_sysname" property="imgSysname" />
+		<result column="sign_date" property="signDate" />
+		<result column="last_date" property="lastDate" />
+		<result column="social_at" property="socialAt" />
+		<result column="point" property="point" />
+		<result column="grade_no" property="gradeNo" />
+		<result column="gradename" property="gradeName" />		
+		<result column="img_path" property="imgPath" />
+		<result column="recipe_cnt" property="recipeCnt" />
+		<result column="selling_cnt" property="sellingCnt" />		
+		<result column="totalBuy" property="totalBuy" />
+		<result column="totalSel" property="totalSel" />		
+		<result column="order_no" property="orderNo" />		
+		<result column="sell_mem_no" property="sellMemNo" />		
+		<result column="but_mem_no" property="buyMemNo" />		
+		<result column="tot_count" property="totCount" />		
+		<result column="get_" property="get" />		
+		<result column="order_sum" property="orderSum" />		
+		<result column="delivery_no" property="deliveryNo" />		
+	</resultMap>	
+
+
+    <!-- 회원 전체목록 페이징추가 -->
+	<select id="selectMemberList" parameterType="page" resultMap="MemberMap">		 
+
+		select m.* , g.gradename
+	      from (select a.*, 	           
+	                   (select sum(order_sum) from tb_order where buy_mem_no = a.mem_no) 'totalBuy',
+	                   (select sum(order_sum) from tb_order where sell_mem_no = a.mem_no) 'totalSel' 
+	              from tb_member a) m, tb_grademap g
+	     where m.grade_no = g.grade_no		     
+         order by m.mem_no
+			
+	</select> 
+	
+
+	<!-- 회원 상세조회 -->
+     <select id="selectMemberByNo" parameterType="int" resultMap="MemberMap">
+		select * from tb_member where mem_no = #{no}
+	</select>
+	<!-- 게시판 전체 조회 -->
+	<select id="selectBoardForRecipe">
+		select * from tb_recipe
+	</select>
+	<select id="selectBoard">
+	</select>
+	
+	
+	<!--  pb store 부분-->
+	<resultMap id="storepbMap" type="storePB">
+		<result column="pb_no" property="pbNo" />
+		<result column="name" property="name" />
+		<result column="content" property="content" />
+		<result column="price" property="price" />
+		<result column="regdate" property="regDate" />
+		<result column="mem_no" property="memNo" />
+		<result column="viewcnt" property="viewCnt" />
+		<result column="imgpath" property="imgPath" />
+		<result column="thumnail" property="thumnail" />
+	</resultMap>
+	<!--  pb 상품 전체조회( 관리자전용 ) -->
+	<select id="selectAdminPBList" resultMap="storepbMap" parameterType="pagepb">
+		select * 
+	  	  from tb_pb
+	 	 order by pb_no desc
+	 	 limit #{begin}, 12
+	</select>
+	
+	<select id="selectAdminPBListCount" resultType="int">
+		select count(*)
+		  from tb_pb
+	</select>
+	
+	<!-- pb 상품 등록 (관리자 전용 )  -->
+	<insert id="insertPBStore" parameterType="storePB">
+		insert into tb_pb(
+			mem_no, 
+			name, 
+			price,
+			content,
+			imgpath,
+			thumnail
+		)
+		values(
+			1, 
+			#{name}, 
+			#{price},
+			#{content},
+			#{imgPath},
+			#{thumnail}
+		)
+	</insert>
+	
+	<!-- pb 상품 수정 (관리자 전용) -->
+	<update id="updatePBStore" parameterType="storePB">
+		update tb_pb
+		   set name = #{name},
+		       price = #{price},
+		       content = #{content}
+		 where pb_no = #{pbNo}		   
+	</update>
+	
+	<select id="selectPBStoreByNo" parameterType="int" resultMap="storepbMap">
+		select *
+		  from tb_pb
+		 where pb_no = #{pbNo}
+	</select>
+	
+	<!-- pb 상품 삭제 (관리자 전용) -->
+	<delete id="deletePBStore" parameterType="int">
+		delete 
+		  from tb_pb
+		 where pb_no = #{pbNo}
+	</delete>
+</mapper>

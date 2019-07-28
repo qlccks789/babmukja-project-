@@ -1,0 +1,374 @@
+.manage_container {
+
+    width: 1200px;
+    margin-top: 90px;
+    margin-bottom:90px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.manage_header {
+    border-bottom: 3px solid gainsboro;
+}
+
+.manage_header span {
+    display: inline-block;
+}
+
+.header_cooking_manage{
+
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 30px;
+    color: #7db341;
+    
+}
+
+.host_meetup{
+
+    padding:10px;
+    width: 800px;
+    margin: 0 auto;
+    margin-top:40px;
+    text-align: center;
+    font-size:25px;
+
+}
+
+.host_meetup_title{
+    border-bottom:1px solid black;
+}
+
+.host_meetup_list_header{
+    height: 38px;
+    display: grid;
+    grid-template-columns: 20% 55% 25%;
+    align-items: center;
+    border-bottom: 1px solid gainsboro;
+}
+
+.host_meetup_list_header>div{
+    font-size:23px;
+    font-weight: bold;
+
+}
+
+.host_meetup_list{
+    height: 38px;
+    display: grid;
+    grid-template-columns: 20% 55% 25%;
+    align-items: center;
+    border-bottom: 1px solid gainsboro;
+}
+
+.host_meetup_list>div{
+    font-size:20px;
+    text-align: center;
+    
+}
+
+.host_meetup_list:hover{
+    background-color: rgba(220, 220, 220, 0.5);
+}
+
+.manage_member{
+    background-color: #7db341;
+    color:white;
+   margin: 0 auto;
+    border: 1px solid black;
+    padding:1px;
+    width:60px;
+    height:25px;
+    font-size: 13px;
+    line-height: 23px;
+}
+.manage_widthdrawl{
+	background-color: #7db341;
+    color:white;
+   margin: 0 auto;
+    border: 1px solid black;
+    padding:1px;
+    width:60px;
+    height:25px;
+    font-size: 13px;
+    line-height: 23px;
+}
+.host_meetup{
+
+    padding:10px;
+    width: 800px;
+    margin: 0 auto;
+    margin-top:40px;
+    text-align: center;
+    font-size:25px;
+
+}
+
+/* 내가 참여하는 모임 */
+
+.follow_meetup{
+
+    padding:10px;
+    width: 800px;
+    margin: 0 auto;
+    margin-top:50px;
+
+    text-align: center;
+    font-size:25px;
+
+}
+
+.follow_meetup_title{
+    border-bottom:1px solid black;
+}
+
+.follow_meetup_list_header{
+    height: 38px;
+    display: grid;
+    grid-template-columns: 20% 55% 25%;
+    align-items: center;
+    border-bottom: 1px solid gainsboro;
+}
+
+.follow_meetup_list_header>div{
+    font-size:23px;
+    font-weight: bold;
+
+}
+
+.follow_meetup_list{
+    height: 38px;
+    display: grid;
+    grid-template-columns: 20% 55% 25%;
+    align-items: center;
+    border-bottom: 1px solid gainsboro;
+}
+
+.follow_meetup_list:hover{
+    background-color: rgba(220, 220, 220, 0.5);
+}
+
+
+.follow_meetup_list>div{
+    font-size:20px;
+    text-align: center;
+    
+}
+
+.meetup_withdrawal{
+    background-color: #7db341;
+    color:white;
+   margin: 0 auto;
+    border: 1px solid black;
+    padding:1px;
+    width:60px;
+    height:25px;
+    font-size: 13px;
+    line-height: 23px;
+}
+
+/* codepen css */
+/* Tab styling (optional) */
+
+.tl_container {margin: 0;}
+
+.tl_list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: left;
+  list-style: none;
+}
+
+.tl_list li {
+  margin: 0;
+  width: 33.3333%;
+  text-align: center;
+  border-radius: 4px 4px 0 0;
+}
+
+.tl_list a {
+  color:black;
+  padding: 1rem 0.5rem;
+  display: block;
+  border: none;
+  text-decoration: none;
+  text-shadow: none;
+}
+.tl_list a:hover{
+    text-decoration: none;
+}
+
+/* White focus ring - so you can see when it's focussed (not required) */
+.tl_section h2:focus {
+  outline: 1px solid currentcolor;
+}
+
+
+/* Section styling (optional) */
+
+.tl_section {
+  padding: 1rem 1.5rem;
+  min-height: 8rem;
+  border-radius: 0 0 4px 4px;
+  text-shadow: none;
+}
+.tl_section h2 {
+  margin-top: 1rem;
+}
+
+
+/* tab & panel colour */
+
+.a,
+.a:hover,
+.a:focus {background-color: #f8f8f8}
+.b,
+.b:hover,
+.b:focus  {background-color:#fffceb}
+.c,
+.c:hover,
+.c:focus  {background-color: rgba(85,160,255,.3);}
+.d,
+.d:hover,
+.d:focus  {background-color: rgba(85,160,255,.25);}
+.e,
+.e:hover,
+.e:focus  {background-color: rgba(85,160,255,.5);}
+
+
+/* 
+Section styling (required)
+Removes hidden sections from the keychain. 
+Only used when JavaScript is available.
+*/
+[role="tabpanel"][aria-hidden="true"] {
+  display: none;
+}
+
+
+/* 회원명단 부분 */
+
+.host_meetup{
+
+    padding:10px;
+    width: 800px;
+    margin: 0 auto;
+    margin-top:40px;
+    text-align: center;
+    font-size:25px;
+
+}
+
+
+
+.member_list_header{
+    height: 38px;
+    display: grid;
+    grid-template-columns: 15% 25% 25% 35%; 
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid gainsboro;
+}
+
+.member_list_header>div{
+    font-size:23px;
+    font-weight: bold;
+
+}
+
+.member_list{
+    height: 38px;
+    display: grid;
+    grid-template-columns: 15% 25% 25% 35%;
+    align-items: center;
+    border-bottom: 1px solid gainsboro;
+}
+
+.member_list>div{
+    font-size:20px;
+    text-align: center;
+    
+}
+
+.manage_ban{
+    display: inline-block;
+    background-color: #7db341;
+    color:white;
+    border: 1px solid black;
+    padding:1px;
+    width:60px;
+    height:25px;
+    font-size: 13px;
+    line-height: 23px;
+    margin-right:15px;
+}
+
+
+/* 승인요청  */
+
+
+.member_approval_header{
+    height: 38px;
+    display: grid;
+    grid-template-columns: 15% 25% 25% 35%; 
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid gainsboro;
+}
+
+.member_approval_header>div{
+    font-size:23px;
+    font-weight: bold;
+
+}
+
+.member_approval{
+    height: 38px;
+    display: grid;
+    grid-template-columns: 15% 25% 25% 35%;
+    align-items: center;
+    border-bottom: 1px solid gainsboro;
+
+}
+
+.member_approval>div{
+    font-size:20px;
+    text-align: center;
+    
+}
+
+.manage_approval{
+display: inline-block;
+}
+
+.manage_approval{
+    display: inline-block;
+    background-color: #7db341;
+    color:white;
+    border: 1px solid black;
+    padding:1px;
+    width:60px;
+    height:25px;
+    font-size: 13px;
+    line-height: 23px;
+    margin-right:15px;
+}
+
+.manage_reject{
+    display: inline-block;
+    background-color: #7db341;
+    color:white;
+    border: 1px solid black;
+    padding:1px;
+    width:60px;
+    height:25px;
+    font-size: 13px;
+    line-height: 23px;
+    margin-right:15px;
+}
+
+.host_meetup_atag{
+	text-decoration:none;	
+	color:black;
+}

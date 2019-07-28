@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+ 
+<tiles-definitions>
+ 
+    <!-- 메뉴 표시 -->
+    <definition name="template" template="/WEB-INF/tiles/layout/template.jsp">
+        <put-attribute name="header"   value="/WEB-INF/tiles/layout/menubar.jsp" />
+        <put-attribute name="footer"   value="/WEB-INF/tiles/layout/footer.jsp" />
+    </definition>
+
+    <definition name="template2" template="/WEB-INF/tiles/layout/template2.jsp">
+        <put-attribute name="header"   value="/WEB-INF/tiles/layout/adminmenubar.jsp" />
+        <put-attribute name="footer"   value="/WEB-INF/tiles/layout/footer.jsp" />
+    </definition>
+
+    
+    <definition name="store/*" extends="template">
+        <put-attribute name="body"   value="/WEB-INF/jsp/store/{1}.jsp" />
+    </definition>
+    
+    <definition name="recipe/*" extends="template">
+        <put-attribute name="body"   value="/WEB-INF/jsp/recipe/{1}.jsp" />
+    </definition>
+    
+    <definition name="meetup/*" extends="template">
+        <put-attribute name="body"   value="/WEB-INF/jsp/meetup/{1}.jsp" />
+    </definition>
+    
+    <definition name="board/*" extends="template">
+        <put-attribute name="body"   value="/WEB-INF/jsp/board/{1}.jsp" />
+    </definition>
+    
+     <definition name="member/emailform" extends="template">
+        <put-attribute name="body"   value="/WEB-INF/jsp/member/emailform.jsp"/>
+    </definition>
+    
+    <definition name="member/emailcheck" extends="template">
+        <put-attribute name="body"   value="/WEB-INF/jsp/member/emailcheck.jsp"/>
+    </definition>
+    
+
+    <definition name="admin/*" extends="template">
+        <put-attribute name="body"   value="/WEB-INF/jsp/admin/{1}.jsp" />
+    </definition>
+
+    <definition name="notice/*" extends="template2">
+        <put-attribute name="body"   value="/WEB-INF/jsp/notice/{1}.jsp" />
+    </definition>
+
+</tiles-definitions>

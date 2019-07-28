@@ -1,0 +1,151 @@
+@charset "UTF-8";
+* { margin:0px; padding:0px; }
+#tableDesign{
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 1200px;
+    height: 300px;
+    box-sizing: border-box;
+}
+
+#tableDesign tr{
+	border: 1px solid #7db341; 
+	
+}
+#tableDesign caption{
+   display:none;
+}
+#tableDesign th{
+    border-top: 1px solid #7db341;
+    border-bottom: 1px solid #7db341;
+    background-color:white;
+    
+}
+#tableDesign th:first-child{
+  width:80px;
+}
+#tableDesign th:first-child(2){
+  width:290px;
+}
+#tableDesign th:first-child(3){
+  width:170px;
+}
+#tableDesign th:first-child(4){
+  width:150px;
+}
+#tableDesign th:first-child(5){
+  width:120px;
+  background: no-repeat right top;
+}
+#tableDesign th span{
+ display: block;    
+}
+
+#tableDesign td{
+  padding: 8px 0px;
+  text-align: center;
+  border-bottom: 1px solid #7db341;
+  border-collapse: collapse; 
+}
+#tableDesign td.leftstyle{
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#tableDesign td.leftstyle2{
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold; 
+  border: 1px solid #7db341;  
+}
+#tableDesign td.leftstyle2 a:hover{
+	text-decoration: underline;
+	color: BLUE/* #7db341 */;
+}
+
+#tableDesign tr:hover{
+  background-color:white;
+  color:#7db341;
+}
+.inquirelist span{
+  font-size:1.2em;
+  font-weight: bold;
+}
+
+.inquirelist{
+ border: 1px solid #7db341;
+ }
+ 
+.inquirelist2{
+  font-size:1.2em;
+  font-weight: bold;
+  border: 1px solid #7db341;
+}
+
+.inquirelist2 button{
+  font-size:1em;	
+  background-color:khaki;
+  /* background-color: #ff80c0; */
+}
+
+.bntView{
+    padding:5px 20px;
+    background-color:#7db341;
+    border-style: none;
+    border-radius: 5px;
+    cursor:pointer;
+    text-decoration: none;
+    color:inherit;
+    font-size:1.3em;
+}
+.bntView:hover{
+  background-color:black;
+  color:#7db341;
+}
+#pageNav ul{
+  padding:50px 30px 30px 0px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  background-color:#7db341;
+}
+
+#pageNav ul li{
+  display: inline;
+  padding:2px;
+}
+
+#pageNav ul li{
+  /* background-color:#7db341; */
+  padding:5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+ #pageNav ul li div:last-child a {
+  padding:5px 10px;
+  /* background-color: #7db341; */
+  color:black;
+} 
+ #pageNav ul li div a:hover{
+  text-decoration: underline;
+  color: #FA7268;
+  /* background-color: #FA7268; */
+} 
+
+#tableDesign span{
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+  /* border: 1px solid #7db341; */
+
+
+#tableDesign td.noticeNo{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.noticelist{
+    text-align: center;
+    background: white;
+}

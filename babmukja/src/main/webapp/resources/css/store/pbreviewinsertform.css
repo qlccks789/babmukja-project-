@@ -1,0 +1,199 @@
+.pb_insertform_container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.pb_product_name input {
+    width: 300px;
+    height: 33px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.pb_review_insertform_header {
+    color: #7db341;
+    font-size: 33px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 10px;
+}
+
+.pb_product_name input:focus {
+    border-color: #7db341;
+    transition: border-color 0.5s ease-in-out;
+}
+
+.pb_product_price input {
+    width: 300px;
+    height: 33px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.pb_product_price input:focus {
+    border-color: #7db341;
+    transition: border-color 0.5s ease-in-out;
+}
+
+.product__content {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.pb_product_content {
+	height: 300px;
+}
+
+.pb_product_content textarea:focus {
+    border-color: #7db341;
+    transition: border-color 0.5s ease-in-out;
+}
+
+.pb_product_name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;	
+    margin-top: 100px;
+}
+
+.image_choice input[type="file"] {
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip:rect(0,0,0,0); 
+    border: 0;
+}
+
+.image_choice label {
+    display: inline-block; 
+    padding: .5em .75em; 
+    color: white; 
+    font-size: inherit; 
+    line-height: normal; 
+    vertical-align: middle; 
+    background-color: #7db341; 
+    cursor: pointer; 
+    border: 1px solid #ebebeb; 
+    border-bottom-color: #e2e2e2; 
+    border-radius: .25em;
+    font-weight: bold;
+}
+
+.pb_insert_submit > button {
+    display: inline-block; 
+    padding: .5em .75em; 
+    color: white; 
+    font-size: inherit; 
+    line-height: normal; 
+    vertical-align: middle; 
+    background-color: #7db341; 
+    cursor: pointer; 
+    border: 1px solid #ebebeb; 
+    border-bottom-color: #e2e2e2; 
+    border-radius: .25em;
+    display: flex;
+    font-weight: bold;
+    margin: 5px;
+    margin-left: 100px;
+}   
+
+.pb_insert_submit {
+	height: 50px;
+	display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+.image_choice input {
+	  margin-left: 16px;
+	  border: none;
+	  background: none;
+	  background-color: #7db341;
+	  color: white;
+	  border-radius: 3px;
+	  width: 110px;
+	  height: 30px;
+	  font-weight: bold;
+	  font-size: 16px;
+}
+
+.pb_insertform_container > .pb_product_name, 
+                           .pb_product_price,
+                           .pb_pb_product_image,
+                           .pb_product_content,
+                           .pb_product_plus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.pb_product_name > p {
+    color: rgb(81,81,81);
+    font-weight: bold;
+}
+
+.pb_product_price > p {
+    color: rgb(81,81,81);
+    font-weight: bold;    
+}
+
+.image_container {
+    width: 400px;
+    height: 200px;
+    border: 2px solid gainsboro;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-position: center center;
+}
+
+.image_choice {
+    text-align: center;
+    margin-top: 20px;   
+}
+
+.product__content {
+    margin-top: 20px;   
+    border-radius: 5px;
+    width: 400px;
+    resize: none;
+}
+
+.pb_product_plus {
+    margin-top: 20px;
+}
+
+.product__plus_btn {
+    width: 50px; height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #7db341;    
+    font-size:40px;
+    color:white;
+}
+
+
+#pb_insert_cancle_button {
+    display: inline-block; 
+    padding: .5em .75em; 
+    color: white; 
+    font-size: inherit; 
+    background-color: #7db341; 
+    cursor: pointer; 
+    border: 1px solid #ebebeb; 
+    border-bottom-color: #e2e2e2; 
+    border-radius: .25em;
+    display: flex;
+    margin: 0 auto;  
+    margin-top: -114px;
+    margin-left: 550px;
+    margin-bottom: 100px;
+}
+

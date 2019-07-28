@@ -1,0 +1,134 @@
+@charset "UTF-8";
+#writeform-header{
+    color: #7db341;
+    font-size : 33px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 30px;
+}
+
+#paragraph{
+    margin : 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom : 20px;
+    font-size : 17px;
+    color: #7db341;
+    text-align: center;
+    
+}
+#keyword-container{
+    width: 1200px;
+    margin: 0 auto;
+    height : 700px;
+    font-size : 30px;
+    font-family: 'East Sea Dokdo', cursive;
+    margin-bottom : 30px;
+}
+.keyword-wrapper{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin: 20px 0 20px 0;
+
+}
+.keyword-wrapper > div:nth-child(1){
+    font-size : 45px;
+    padding-left : 20px;
+}
+
+#editorjs{
+    margin : 0 auto;
+    width: 1200px;
+    border-right : 1px solid gainsboro;
+    border-left : 1px solid gainsboro;
+}
+#buttonWrapper{
+    margin : 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+button:focus{
+    outline: none;
+}
+button{
+    border  : 0;
+    background :gainsboro;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 120px;
+    font-size: 17px;
+    color :White;
+    border-radius: 5px;
+    transition: .3s;
+    margin-bottom: 100px;
+}
+button:hover{
+    background :#7db341;
+}
+
+#title{
+	margin-top : 50px;
+    width: 649px;
+    height: 50px;
+    border-radius : 5px;
+    border : 1px solid gainsboro;
+    font-size: 20px;
+    font-weight: bolder;
+    display: block;
+    margin-left :274px;
+    outline: #7db341;
+    text-align: center;
+}
+
+.videoPlus {
+	margin: 0 auto;
+    width: 649px;
+    height: 50px;
+    border: 1px dotted gray;
+    color: gray;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;    
+}
+.videoPlus span {
+    color: #7db341;
+    animation: glitter 2s linear 0s infinite;
+}
+@keyframes glitter{
+	0%{opacity: 0.4;}
+	50%{opacity: 1;}
+	100%{opacity: 0.4;}
+}
+#my-video[poster]{
+    object-fit: cover;
+}
+#my-video {
+	margin : 0 auto;	
+	margin-botton : 10px;
+}
+.fileContainer {
+    overflow: hidden;
+    position: relative;
+}
+
+.fileContainer [type=file] {
+    cursor: inherit;
+    display: block;
+    filter: alpha(opacity=0);
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}

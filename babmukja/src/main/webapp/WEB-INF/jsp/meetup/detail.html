@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="../../../resources/css/meetup/temporary_detail.css" rel="stylesheet" type="text/css">
+
+
+    <title>Document</title>
+    <style>
+        .host_meetup_atag{
+	text-decoration: no	
+}
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="headerLeft">
+            <div class=title>오늘은 내가 짜파게티 요리사</div>
+            <div class="subInfo">
+                <div class="infoTagContainer"><span class="infoTag">모임장</span></div>
+                <div class="infoTagContainer"><span class="infoTag">지역</span></div>
+                <div class="infoTagContainer"><span class="infoTag">월회비</span></div>
+                <div class="infoTagContainer"><span class="infoTag">회원수</span></div>
+                <div class="subInfoPic">
+                    <i class="fas fa-user-shield fa-3x"></i>
+                </div>
+                <div class="subInfoPic">
+                    <i class="fas fa-map-marker-alt fa-3x"></i>
+                </div>
+                <div class="subInfoPic"><i class="fas fa-won-sign fa-3x"></i>
+                </div>
+                <div class="subInfoPic">
+                    <i class="fas fa-users fa-3x"></i>
+                </div>
+                <div class="tagBottom">김우중</div>
+                <div class="tagBottom">부천,인천</div>
+                <div class="tagBottom">10,000원</div>
+                <div class="tagBottom">50명</div>
+
+            </div>
+            <div class="tag">
+                #짜파게티 #치즈 짜파게티 #불닭 짜파게티
+            </div>
+
+        </div>
+        <div class="headerRight">
+            <div class="area">
+                <img src="../../../resources/css/meetup/cooking1.jpg ">
+                <img src="../../../resources/css/meetup/cooking2.jpg ">
+                <img src="../../../resources/css/meetup/cooking3.jpg ">
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="tabContainer">
+        <table class="selectTab">
+            <tr>
+                <td>모임소개</td>
+                <td>모임공지</td>
+                <td>자유게시판</td>
+                <td>사진첩</td>
+                <td>회원</td>
+            </tr>
+        </table>
+
+        <div class="tabPanel" id="tabPanel1">
+            <span class="writeIntro">글쓰기</span>
+
+        </div>
+        <div class="tabPanel">
+            
+            <div class ="noticeListContainer">
+                <div class="noticeListHeader">
+                <div>글 번호</div>
+                <div>제목</div>
+                <div>작성자</div>
+                <div>날짜</div>
+                <div>조회수</div>
+                </div>
+            
+
+                <div class="noticeList">
+                    <div>1</div>
+                    <div>6월 12일 개복치 알 요리 공지</div>
+                    <div>이수안</div>
+                    <div>2019-06-05</div>
+                    <div>40</div>
+                    </div> 
+               
+              
+                    <div class="noticeList">
+                        <div>1</div>
+                        <div>6월 5일 개복치 내장 요리 공지</div>
+                        <div>이수안</div>
+                        <div>2019-06-05</div>
+                        <div>20</div>
+                        </div>      
+           
+                </div>
+               <!--noticeList container   -->
+               <span class="writeNotice">글쓰기</span>
+
+        </div>
+   <!--tab panel 끝  -->
+        <div class="tabPanel">자유게시판</div>
+        <div class="tabPanel">
+            <div class="album_container">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="tabPanel">
+            <div class="detail_member_container">
+                <div class="detail_member_info">
+                    <div id="profile-picture">
+                        <img src="../../../resources//images/bottle.png">
+                    </div>
+                    <div class="detail_member_name">시골쥐</div>
+                    <div class="detail_member_regDate_container">
+                        <div>가입일</div>
+                        <div>2019년 6월 30일</div>
+                    </div>
+                    <div class="detail_member_message_container" ><i class="far fa-envelope"></i>
+
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+   
+    <script>
+        $(".area").click(function () {
+            $(".area").animate({ left: -600 }, 1000);
+        });
+
+
+
+        for (let i = 0; i <= 4; i++) {
+
+
+            $(`td:eq(${i})`).click(function () {
+                $(`td`).css("background-color", "white");
+                $(`td`).css("color", "black");
+                $(".tabPanel").css("display", "none");
+                $(`td:eq(${i})`).css("background-color", "#7db341");
+                $(`td:eq(${i})`).css("color", "white");
+                $(`.tabPanel:eq(${i})`).css("display", "block");
+
+            });
+
+        }//for
+
+
+
+        for (let i = 0; i <= 4; i++) {
+
+
+            $(`i:eq(${i})`).mouseover(function () {
+
+                $(`.infoTag:eq(${i})`).addClass("pseudo");
+
+
+
+
+
+            });
+            $(`i:eq(${i})`).mouseleave(function () {
+
+                $(`.infoTag:eq(${i})`).removeClass("pseudo");
+
+
+
+
+
+            });
+
+        }//for
+
+        //소개 글쓰기 생성시 박스 생성
+        $(".writeIntro").click(function () {
+
+            $("#tabPanel1").html(` <div>
+ <div id="introHeader" >모임을 소개해 주세요~^^</div>
+        <textarea name="intro" id="introBox"></textarea>
+        <div id="introSave">저장</div>
+        </div>`);
+        });
+
+
+        $(".meetup_tag").keyup(function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault
+    }
+});
+
+    </script>
+
+
+
+
+</body>
+
+</html>

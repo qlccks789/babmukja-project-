@@ -1,0 +1,87 @@
+@charset "UTF-8";
+.inquiry{
+	width:1200px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+.inquiry {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.customer, .customer2{
+margin-top: 0px;margin-bottom: 10px;padding-right: 5px; font-weight: bold;
+}
+.customer2, .inquire{
+    background-color: gold; padding-top: 5px; padding-bottom: 5px; 
+}
+.inquire{
+    display: flex;
+    justify-content: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 1px solid black;
+}
+.inquire2{
+	border: 1px solid black;
+	font-weight: bold;
+}
+
+.answer2{
+	border: 1px solid black;
+	font-weight: bold;
+}
+
+table.inlined{
+    display: inline-table; font-weight: bold;
+}
+.inquire3{
+    border: 1px solid black;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+.customer2{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.inlined a{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: blue;
+}
+.inlined a:hover{
+	text-decoration: underline;
+}
+
+#pageNav ul{
+    padding:50px 30px 30px 0px;
+    text-align: center;
+  }
+  
+  #pageNav ul li{
+    display: inline;
+    padding:2px;
+  }
+  
+  #pageNav ul li a {
+    background-color:white;
+    padding:5px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  #pageNav ul li:last-child a {
+    padding:5px 10px;
+    background-color:white;
+    color:black;
+  }
+  #pageNav ul li a:hover{
+    background-color: var(--colorGray);
+  }
+  

@@ -1,0 +1,85 @@
+@charset "UTF-8";
+body{
+    background: gainsboro;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: rgb(81,81,81);
+}
+a:visited{
+    text-decoration: none;
+    color: rgb(81,81,81);
+}
+#menubar{
+	display : fixed;
+	top:0;
+	border-bottom:1px solid gainsboro;
+    height : 60px;
+    background : white;
+    color:rgb(81,81,81);
+    display: flex;
+    justify-content: flex-start;
+    align-self: auto;
+}
+#menubar > b{
+    border-right: 1px solid gainsboro;
+    line-height: 60px;
+    overflow: hidden;
+    transition: .3s;
+    width: 20px;
+}
+#menubar > b:hover{
+    width: 70px;
+    background: tomato;
+    color:white;
+}
+#menubar> b:hover > i{
+    color : white;
+}
+#home{
+    color: #7db341;
+    cursor: pointer;
+    padding : 20px;
+    font-size : 16px;
+    font-weight: bolder;
+    border-right: 1px solid gainsboro;
+    width: 240px;
+}
+#menubar > div{
+    padding : 20px;
+    border-right: 1px solid gainsboro;
+    transition: .3s;
+    overflow: hidden;
+}
+#menubar > div:hover{
+    border-right: 1px solid gainsboro;
+    color: white;
+    background : #7db341;
+    cursor: pointer;
+}
+#menubar > div:hover > i{
+    color : white;
+}
+
+#move{
+    display: none;
+    position: fixed;
+    top:0;
+    width: 260px;
+    border : 1px solid gainsboro;
+    background: white;
+    color: #7db341;
+    padding : 20px;
+    font-size : 16px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+#menubar i{
+    color: #7db341;
+    margin-right: 3px;
+}
+#nickName {
+	margin-right: 10px;
+}

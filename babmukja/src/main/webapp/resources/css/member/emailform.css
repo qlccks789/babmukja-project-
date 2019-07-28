@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.email_form__container{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top : 230px;
+}
+.email__form-text {
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(81,81,81);
+}
+.email__send {
+	margin-bottom: 10px;
+}

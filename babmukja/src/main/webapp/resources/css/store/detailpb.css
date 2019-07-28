@@ -1,0 +1,1295 @@
+#pb_detail_container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    
+}
+#pb_detail_header_container {
+    margin-top: 100px;  
+    height: 550px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 80px;
+}
+
+#pb_detail_header_images {
+    box-sizing: border-box;
+    height: 500px;
+}
+
+#pb_detail_main_image {
+    width: 550px;
+    height: 500px;
+    margin-left: 100px;
+    margin-top: -75px;
+    
+}
+
+#pb_detail_main_image > a > img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#pb_detail_thumbnail_list {
+    width: 80px;
+    height: 80px;
+    
+}
+
+#pb_detail_thumbnail_list  > a > img{
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+
+#pb_detail_info {
+    width: 250px;
+    margin-right: 150px;
+    height: 500px;
+    color: rgb(81, 81, 81);
+    margin-top: 30px;
+}
+
+#pb_detail_title {
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+}
+
+
+#pb_detail_rating_point {
+    font-size: 20px;
+    margin-left: 5px;
+    
+}
+
+#pb_detail_rating_point:hover {
+    color: #7db341;
+}
+
+#pb_detail_price {
+    margin-left: 5px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#pb_detail_promotion {
+    display: flex;
+    font-size: 10px;
+    margin-left: 8px;
+}
+
+#pb_detail_select_product {
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+#pb_detail_select_product > select {
+    width: 250px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: rgb(81, 81, 81);
+}
+
+#pb_detail_select_box {
+    margin-top: 20px;
+    margin-left: 5px;
+    color: rgb(81, 81, 81);
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 17px;
+}
+
+#select_product_title {
+    color: rgb(81, 81, 81);
+    
+}
+
+#select_product_count {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    color: rgb(81, 81, 81);
+}
+
+#select_product_count button {
+    font-size: 10px;
+    outline: 0;
+    background-color: white;
+    color: rgb(81, 81, 81);
+}
+
+#select_product_count button:hover {
+    background-color: #7db341;
+    color: white;
+}
+
+
+#select_product_total-price {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 25px;
+    color: rgb(81, 81, 81);
+    font-size: 17px;
+}
+
+#select_product_total-price > .total__price {
+    font-weight: bold;
+}
+
+#pb_detail_btns {
+    margin-top: 30px;
+    margin-left: 10px;
+    width: 250px;
+    font-weight: bold;
+}
+
+#pb_detail_btns > button {
+    outline: 0;
+    width: 120px;
+    height: 50px;
+    background-color: white;
+    border-radius: 5px;
+    color: #7db341;
+}
+
+#pb_detail_btns > button:hover {
+    background-color: #7db341;
+    color: white;
+}
+
+#product_info_detail {
+	margin-top: 50px;
+}
+
+#pb_info_move {
+	height: 50px;
+	
+}
+
+#pb_detail_menubar {
+    display: flex;
+    font-size: 30px;
+    width:1200px;
+    color: rgb(81, 81, 81);
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 7px;
+    border: 2px solid gainsboro;
+    margin-top: 50px;
+    background-color: white;
+    position: sticky;
+    top:8%;
+    z-index: 100;
+}
+
+#pb_review_writeform, #pb_inquire_writeform, #count_minus, #count_plus, .add_to_cart, .buy_now {
+	cursor: pointer;
+}
+
+
+ #detail_product_info {
+    border-right: 3px solid gainsboro;
+}
+#detail_product_review {
+    border-right: 3px solid gainsboro;
+}
+
+/*
+#detail_product_refund {
+    border: 2px solid gainsboro;
+} */
+
+#pb_detail_body_container {
+    margin-top: 100px;
+}
+
+#product_info {
+    font-size: 30px;
+    color: #7db341;
+    border-bottom: 3px solid gainsboro;
+    
+}
+
+#product_info_img {
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    justify-content: center;
+	margin-top: 100px;    
+}
+
+#product_info_img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+#product_info_content {
+    text-align: center;
+}
+
+#pb_review_header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    border-bottom: 3px solid gainsboro;    
+
+}
+
+#pb_review {
+    font-size: 30px;
+    color: #7db341;
+}
+
+#pb_review_header > button {
+    margin-right: 20px;
+      border: 0;
+      outline: 0;
+      background-color: white;
+      font-size: 20px;
+      color: rgb(81, 81, 81);
+      margin-top: -10px;
+
+}
+
+#pb_review_header > button:hover {
+    color: #7db341;
+}
+
+.pb_review_profile {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    margin-top: 15px;
+}
+
+.pb_review_profile_img img {
+    width: 65px;
+    height: 65px;
+    border-radius: 55px;
+}
+
+.pb_review_user_info {
+	display :grid;
+	grid-template-rows : 50% 50%;
+	margin-left: -25px;
+    margin-top: 5px;
+}
+
+.review_user_nickname {
+    font-weight: bold;
+    font-size: 15px;
+    float: left;
+    margin-right: 15px;
+}
+.reviewBUTTON{
+	margin-left : 15px;
+	display: flex;
+}
+.pb_review_select {
+	height: auto;
+	border-bottom: 1px solid gainsboro;
+}
+
+.review_border-bottom {
+    margin-top: 30px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.pb_review_select_img{
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap : 5px;
+    margin-bottom: 30px;
+}
+
+.pb_review_select_img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    -webkit-transition: 0.4s ease;
+  	transition: 0.4s ease;
+}
+
+.pb_review_select_img img:hover {
+	-webkit-transform: scale(1.08);
+	transform: scale(1.08);
+}
+
+
+#pb_review_inquire_header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    border-bottom: 3px solid gainsboro;    
+}
+
+#pb_review_inquire {
+    font-size: 30px;
+    color: #7db341;
+}
+
+#pb_review_inquire_header > button {
+    margin-right: 20px;
+      border: 0;
+      outline: 0;
+      background-color: white;
+      font-size: 20px;
+      color: rgb(81, 81, 81);
+      margin-top: -20px;
+}
+
+.pb_review_select_content {
+    color: rgb(81, 81, 81);
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.pb_review_body {
+    height: auto;
+}
+
+#pb_review_inquire_header > button:hover {
+    color: #7db341;
+}
+
+#pb_inquire_user_nickname {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(81, 81, 81);
+}
+
+#pb_inquire_question {
+    margin-left: 20px;
+    color: rgb(81, 81, 81);
+}
+
+#pb_inquire_answer {
+    margin-left: 20px;
+    font-weight: bold;
+    color: rgb(81, 81, 81);
+}
+
+#pb_inquire_admin_regdate {
+    margin-left: 20px;
+    color: rgb(81, 81, 81);
+    
+}
+
+#pb_inquire_admin_msg {
+    margin-left: 35px;
+    color: rgb(81, 81, 81);
+}
+
+#pb_inquire_answer_content {
+    margin-left: 35px;
+    color: rgb(81, 81, 81);
+}
+
+#pb_inquire_boder-bottom {
+    border-bottom: 1px solid gainsboro;
+    margin-top: 30px;
+}
+
+#pb_review_page {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 20px;
+    font-size: 20px;
+}
+
+#pb_review_page p:hover {
+    color: #7db341;
+}
+
+#pb_inquire_page {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 20px;
+    font-size: 20px;
+}
+
+#pb_inquire_page p:hover {
+    color: #7db341;
+}
+
+#pb_detail_menubar > div > a:link {
+    text-decoration: none;
+    color: black;
+}
+
+#pb_detail_menubar > div > a:visited {
+    text-decoration: none;
+    color: rgb(81, 81, 81);
+}
+
+#pb_detail_menubar > div > a:hover {
+    color:#7db341;
+}
+
+.jbFixed {
+    position: fixed;
+    top: 0px;
+}
+
+.top_bar_fix {
+    position: fixed;
+    top: -50px;
+    left: 150px;
+    width: 1200px;
+}
+
+#post-body{
+	position: relative;
+}
+
+<!-- -->
+#reviewmodal {
+    height: auto;
+}
+
+.moadl-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.modal-content {
+    width: 50%;
+    text-align: center;    
+    height: auto;
+    min-height: 100%;
+    top:30px;
+}
+
+.modal-title {
+    font-size: 30px;
+    color: #7db341;
+    font-weight: bold;
+}
+
+.product__content {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    width: 500px;
+    height: 170px;
+    resize: none;
+}
+
+.review__update__content {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    width: 500px;
+    height: 170px;
+    resize: none;	
+}
+
+.content_length {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 15px;
+    color: gray;
+}
+
+.pb_product_content textarea {
+    width: 500px;
+    margin-top: 30px;
+}
+
+#preview_img_div {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap : 5px;
+}
+
+#preview_update_img_div {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap : 5px;	
+}
+
+.imgPlus {
+    width: 100px;
+    height: 100px;
+    border: 1px dotted gray;
+    color: gray;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 5px;
+    cursor : pointer;
+    
+}
+
+.inquire__content {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    width: 500px;
+    height: 170px;
+    resize: none;
+    margin-top: 50px;
+}
+
+.inquire__update__content {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    width: 500px;
+    height: 170px;
+    resize: none;
+    margin-top: 50px;	
+}
+
+#img_file {
+    display: none;
+}
+
+#update_img_file {
+    display: none;
+} 
+
+
+.pb_product_content {
+    height: 250px;
+}
+
+.pb_product_content textarea:focus {
+    border-color: #7db341;
+    transition: border-color 0.5s ease-in-out;
+}
+
+.pb_insertform_container > .pb_product_content,
+                           .pb_reviewMap,
+                           .pb_product_plus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-footer > button {
+    display: inline-block; 
+    padding: .5em .75em; 
+    color: white; 
+    line-height: normal; 
+    vertical-align: middle; 
+    background-color: #7db341; 
+    cursor: pointer; 
+    border-radius: .25em;
+    font-weight: bold;
+}
+
+.pb_product_item {
+    display: flex;
+    margin-left: 125px;
+    margin-top: 30px;
+}
+
+.pb_product_item_img {
+    width: 100px;
+    height: 100px;
+    
+}
+
+.pb_product_item_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.pb_product_item_name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.pb_product_item_rating {
+    font-size: 15px;
+    font-weight: bold;
+    width: 400px;
+    height: 150px;
+    margin-left: 60px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.review_images_msg {
+	font-weight: bold;
+    font-size: 18px;
+    margin-left: 8px;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.review_images {
+    display: flex;
+    width: 500px;
+}
+
+.review_update_images {
+    display: flex;
+    width: 500px;	
+}
+
+.rating_msg {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 8px;
+    margin-bottom: 30px;
+}
+/*sprite with stars*/
+#reviewStars-input input:checked ~ label, #reviewStars-input label, 
+#reviewStars-input label:hover, #reviewStars-input label:hover ~ label, 
+#reviewStarsinput input:checked ~ label, #reviewStarsinput label, 
+#reviewStarsinput label:hover, #reviewStarsinput label:hover ~ label {
+    background: url('http://positivecrash.com/wp-content/uploads/ico-s71a7fdede6.png') no-repeat;
+  }
+  
+  #reviewStarsinput input {
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;    
+    width: 20px;
+    height: 20px;    
+    position: absolute;
+    top: 0px; 
+    z-index: 0;
+}
+  
+     #reviewStarsinput input:checked ~ label {
+    background-position: 0 -20px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: -20px;
+  } 
+  
+    #reviewStarsinput label {
+    background-position: 0 0;
+    width: 20px;
+    height: 20px;
+    float: right;  
+    position: relative;
+    z-index: 1;
+    left : -20px;
+    margin-right: 5px;   
+  } 
+  
+  
+  #reviewStars-input {
+    
+    /*fix floating problems*/
+    overflow: hidden;
+    *zoom: 1;
+    /*end of fix floating problems*/
+    margin-left: 66px;
+    position: relative;
+    float: left;
+  }
+  
+  #reviewStars-input input {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    
+    width: 43px;
+    height: 40px;
+    
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
+  
+  #reviewStars-input input:checked ~ label {
+    background-position: 0 -40px;
+    height: 40px;
+    width: 43px;
+  }
+  
+  #reviewStars-input label {
+    background-position: 0 0;
+    height: 40px;
+    width: 43px;
+    float: right;
+    cursor: pointer;
+    margin-right: 10px;
+    
+    position: relative;
+    z-index: 1;
+  }
+  
+  #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+    background-position: 0 -40px;
+    height: 40px;
+    width: 43px;
+  }
+  
+  #reviewStars-input #star-0 {
+    left: 0px;
+  }
+  #reviewStars-input #star-1 {
+    left: 53px;
+  }
+  #reviewStars-input #star-2 {
+    left: 106px;
+  }
+  #reviewStars-input #star-3 {
+    left: 159px;
+  }
+  #reviewStars-input #star-4 {
+    left: 212px;
+  }
+  #reviewStars-input #star-5 {
+    left: 265px;
+  }
+  
+  .reviewUpdateBTN {
+  	border: none;
+  	color: gray;
+  	background: white;
+  }
+  
+  .reviewUpdateBTN:hover {
+  	color: #7db341;
+  }
+ 
+  .reviewDeleteBTN {
+  	border: none;
+  	color: gray;
+  	background: white;
+  }
+  
+  .reviewDeleteBTN:hover {
+  	color: #7db341;
+  }
+
+.image_box {
+	position: relative;
+}
+
+.image_box:hover .overlay {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+
+.preview_img:hover {
+	opacity: 0.4;
+}
+
+.preview_img_btn {
+    position: absolute;
+    margin-left: 80px;
+    margin-top: -110px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+    border: none;
+    background: none;
+    font-size: 30px;
+}
+
+.image_box:hover .preview_img_btn {
+  opacity: 1;
+}
+
+.reviewMSG {
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    color: gray;
+}
+
+.reviewMSG2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    color: gray;	
+}
+
+.pb_inquire_body {
+	margin-top: 20px;
+}
+
+#pb_review_detail {
+	margin-bottom: 100px;	
+	
+}
+
+#pb_review_inquire_detail {
+	margin-bottom: 100px;	
+}
+
+.inq_update_btn {
+    outline: none;
+    border: none;
+    background: white;
+    color: gray;
+}
+
+.inq_update_btn:hover {
+	color: #7db341;
+}
+
+.inq_delete_btn {
+    outline: none;
+    border: none;
+    background: white;
+    color: gray;
+}
+
+.inq_delete_btn:hover {
+	color: #7db341;
+	
+}
+
+#pb_inquire_user_regdate {
+    color: gray;
+    letter-spacing: 1px;
+    margin-left: 25px;
+}
+
+.cartmodal_msg {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.cart_move_btn {
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    border: 1px solid #7db341;
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #7db341;
+    color: white;
+    cursor: pointer;
+}
+
+.cart_move_not_btn {
+    margin-top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    background-color: white;
+    color: #7db341;
+    border: 1px solid #7db341;
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+
+#cart-modal-content {
+	position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    top: 200px;
+    width: 500px;
+    height: 300px;
+}
+.check-stars{
+    box-sizing: border-box;
+    margin : 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    width:300px;
+}
+.check-backStar{
+    background: url(/babmukja/resources/images/star5-gray-big.png);
+    width: 100%;
+    height: 59px;
+}
+
+.check-frontStar-wrapper{
+    width: 120px;
+    position: absolute;
+}
+.check-frontStar{
+    background: url(/babmukja/resources/images/star5-big.png) no-repeat;
+    width : 0px;
+    height: 59px;
+}
+
+.stars{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 100%;
+    width:120px;
+    margin-bottom: 15px;
+    margin-top: -3px;
+}
+.backStar{
+    background: url(/babmukja/resources/images/star5-gray.png);
+    width : 100%;
+    height: 23px;
+}
+.frontStar-wrapper{
+    width: 120px;
+    position: absolute;
+}
+.frontStar{
+    background: url(/babmukja/resources/images/star5.png) no-repeat;
+    height: 23px;
+}
+
+.storeRating{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 100%;
+    width:200px;
+    margin-bottom: 15px;
+}
+.storeRating-backStar{
+    background: url(/babmukja/resources/images/star5-gray.png);
+    background-size : cover;
+    width : 200px;
+    height: 38px;
+}
+.storeRating-frontStar-wrapper{
+    width: 200px;
+    position: absolute;
+}
+.storeRating-frontStar{
+    background: url(/babmukja/resources/images/star5.png) no-repeat;
+    background-size : cover;
+    height: 38px;
+}
+
+
+.user_info_sec1{
+	display:grid;
+	grid-template-columns : 90% 10%;
+}
+
+.pb_product_like {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid;
+    /* width: 50px; */
+    border-radius: 8px;
+    color: gainsboro;
+}
+
+#like_icon {
+    font-weight: lighter;
+    color: gainsboro;
+}
+
+#like_icon:hover {
+	color: red;
+}
+
+.likeheart {
+	width: 30px;
+	cursor: pointer;
+}
+
+.review_date {
+	color: gray;
+}
+
+.pb_inquire_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pb_inq_flex {
+    display: flex;
+}
+
+#pb_inquire_state {
+    margin-top: 15px;
+    color: gray
+}
+
+#pb_inquire_state2 {
+    margin-top: 15px;
+    color: gray
+}
+
+.pb_inq_icon {
+    margin-top: 15px;
+    color: gray;
+}
+
+#pb_inquire_updatebtn {
+    margin-top: 15px;
+    color: gray;
+}
+
+#pb_inquire_delbtn {
+    margin-top: 15px;
+    color: gray;
+}
+
+#pb_inquire_nickname {
+    display: flex;
+}
+
+.pb_inquire_q {
+    color: #7db341;
+    font-weight: bold;
+}
+
+.pb_inquire_a {
+    color:#7db341;
+    font-weight: bold;
+}
+
+.pb_inquire_admin_answer {
+    display: flex;   
+}
+
+.pb_inquire_admin {
+    margin-left: 23px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(81, 81, 81);
+}
+
+.pb_inquire_answer_regdate {
+    margin-left: 25px;
+    color: gray;
+}
+
+.pb_inq_admin_answer_btn {
+    margin-top: 3px;
+    color: gray;
+    outline: 0;
+    background-color: white;
+    border: 0;
+}
+
+.pb_inq_admin_answer_btn:hover {
+    color: #7db341;
+}
+
+.answer_mem_nickname {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(81, 81, 81);
+}
+
+.pb_inq_content_text {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.pb_inq_content_val {
+	font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.pb_inq_info {
+   	display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 600px; */
+    justify-content: center;
+    text-align: center;
+}
+
+/* .pagination { */
+/* 	font-size: 15px; */
+/* } */
+
+/* .pagination:hover { */
+
+/* 	} */
+/* .pagination:hover a{ */
+
+/* 	} */
+
+#review-page {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.review-pagination {
+	display: inline-block;
+    border: 1px solid #7db341;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.review-pagination > a {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.review-pagination > a:link {
+    text-decoration: none;
+    color: #7db341;
+}
+
+.review-pagination > a:visited {
+    text-decoration: none;
+    color: #7db341;
+}
+
+.review-pagination:hover a{
+	color : #7db341;
+}
+
+
+
+.this-review-page {
+	display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    margin-bottom: 10px;
+	background :#7db341;
+	color : white;
+	border-radius: 5px;
+}
+.this-review-page > a{
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.this-review-page > a:hover {
+	color: white;
+}
+
+.this-inq-pagination {
+	display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    margin-bottom: 10px;
+	background :#7db341;
+	color : white;
+	border-radius: 5px;
+}
+.this-inq-pagination > a{
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.this-inq-pagination > a:hover {
+	color: white;
+}
+.inq-pagination {
+	display: inline-block;
+    border: 1px solid #7db341;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.inq-pagination > a {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.inq-pagination > a:link {
+    text-decoration: none;
+    color: #7db341;
+}
+
+.inq-pagination > a:visited {
+    text-decoration: none;
+    color: #7db341;
+}
+
+.inq-pagination:hover a{
+	color : #7db341;
+}
+
+#inq-page {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.right-arrow, .left-arrow {
+	width : 15px;
+	position : relative;
+	top : 2px;
+	left : 10px;
+}
+
+.comment-prev,.comment-next {
+	display: inline-block;
+	width : 35px;
+	height : 25px;
+	margin: 5px;
+    margin-bottom: 10px;
+}
+
+#pb_review_move {
+    height: 30px;
+    width: 10px;
+}
+#pb_inq_move {
+    height: 30px;
+    width: 10px;
+}
+
+.pb_answer_item {
+    margin-left: 65px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 600px;
+    justify-content: center;
+}

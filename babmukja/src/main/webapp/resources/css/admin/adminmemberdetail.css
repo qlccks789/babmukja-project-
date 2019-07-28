@@ -1,0 +1,74 @@
+charset "UTF-8";
+body{
+    background: gainsboro;
+}
+#body{
+    margin: 50px;
+    background: white;
+}
+#body-header{
+    padding: 20px;
+    background: #7db341;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+#body-main{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+}
+#member-img > img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+#member-img > div{
+    width: 100%;
+    font-size : 20px;
+    font-weight: bolder;
+}
+#member-img b{
+    font-size: 15px;
+    font-weight: lighter;
+}
+table,tr,td,th{
+    border : 1px solid gray;
+    border-collapse: collapse;
+    font-size : 18px;
+    padding: 20px;
+}
+#member-profile td:nth-child(2n+1){
+    width: 160px;
+    background: #7db341;
+    color: white;
+}
+#member-memo{
+    border : 1px solid gray;
+    background: gainsboro;
+    overflow-y: scroll;
+}
+#member-memo > div{
+    margin: 10px;
+    background: wheat;
+    box-shadow: 1px 1px 10px 1px gray;
+}
+#member-memo > button{
+    margin: 10px;
+    width:100px;
+    background: #7db341;
+    border-radius: 5px;
+    color: white;
+    border: 0;
+    padding : 10px;
+}
+#member-info{
+    padding: 20px;
+}
+#member-info table{
+    width: 100%;
+}
+th{
+    background: #7db341;
+    color : white;
+}

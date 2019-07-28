@@ -1,0 +1,173 @@
+body{
+    background: gainsboro;
+}
+button{
+    cursor: pointer;
+}
+button:focus{
+    outline: none;
+}
+
+#main{
+    border: 6px solid darkcyan;
+    border-radius: 0 0 10px 10px;
+    background: white;
+}
+#main-header{
+    margin: 30px;
+}
+#member-search-header{
+    font-size: 25px;
+    border : 1px solid gray;
+    padding: 10px;
+}
+#member-search-input{
+    background: gainsboro;
+    padding : 30px;
+    border-right: 1px solid gray;
+    border-left : 1px solid gray;
+}
+#member-search-input > div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height : 35px;
+}
+.search{
+    width: 150px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.search_form_input{
+    height: 30px;
+    font-size : 15px;
+    width: 500px;
+}
+#member-search-button{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid gray;
+    padding: 10px;
+}
+#member-search-button > button{
+    width: 150px;
+    height: 50px;
+    border : 0;
+    background : #7db341;
+    border-radius: 5px;
+    font-size : 20px;
+    color: white;
+    font-weight: bolder;
+}
+#detail{
+    font-size: 30px;
+    color: white;
+    height: 36px;
+    width: 36px;
+    margin-left : 15px;
+    border-radius: 18px;
+    background: #7db341;
+    border: 0;
+    transition: .3s;
+}
+#detail:hover{
+    background:tomato;
+}
+#detail-search{
+    padding: 10px;
+    border-top: 1px solid gray;
+    border-left : 1px solid gray;
+    border-right : 1px solid gray;
+    background: white;
+}
+#detail-search-content > div {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+#detail-search-content > div > div:nth-child(1) div {
+    background: #7db341;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+    border : 1px solid gainsboro;
+    padding: 10px;
+}
+#detail-search-content > div > div:nth-child(2) div {
+    background: white;
+    font-size: 19px;
+    font-weight: bold;
+    color: rgb(81,81,81);
+    border : 1px solid gainsboro;
+    padding: 10px;
+}
+#search-output{
+    margin: 30px;
+    border: 1px solid gray;
+}
+#search-output-header{
+    font-size: 25px;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+}
+#search-output-list table{
+    border-collapse: collapse;
+}
+#search-output-list th,tr,td{
+    border : 1px solid gray;
+}
+table {
+	width : 100%;
+}
+th{
+    text-align: center;
+    background: #7db341;
+    color : white;
+    font-weight: bold;
+    padding: 5px;
+    font-size : 17px;
+}
+td:nth-child(1){
+    width: 50px;
+}
+td:nth-child(2){
+    width: 80px;
+}
+td:nth-child(3){
+    width: 100px;
+}
+td:nth-child(4){
+    width: 200px;
+}
+td:nth-child(5){
+    width: 120px;
+}
+td:nth-child(6){
+    width: 100px;
+}
+td:nth-child(7){
+    width: 140px;
+}
+td:nth-child(8){
+    width: 200px;
+}
+td:nth-child(9){
+    width: 200px;
+}
+td:nth-child(10){
+    width: 200px;
+}
+td:nth-child(11){
+    width: 100px;
+}
+td:nth-child(12){
+    width: 100px;
+}
+td:nth-child(13){
+    width: 100px;
+}
+td:nth-child(14){
+    width: 100px;
+}

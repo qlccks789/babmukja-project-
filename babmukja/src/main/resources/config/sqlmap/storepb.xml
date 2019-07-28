@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.babmukja.repository.mapper.StorePBMapper">
+	<resultMap id="storepbMap" type="storePB">
+		<result column="pb_no" property="pbNo" />
+		<result column="name" property="name" />
+		<result column="content" property="content" />
+		<result column="price" property="price" />
+		<result column="regdate" property="regDate" />
+		<result column="mem_no" property="memNo" />
+		<result column="viewcnt" property="viewCnt" />
+		<result column="imgpath" property="imgPath" />
+		<result column="thumnail" property="thumnail" />
+	</resultMap>
+	
+	<!-- PB MAIN 페이지 -->
+	<select id="selectPBStore" resultMap="storepbMap">
+		select *
+          from tb_pb
+		 order by regDate desc
+	</select>
+	
+	<select id="selectPBBestItem" resultMap="storepbMap">
+		select *  
+		  from tb_pb
+		 order by likecnt desc, rating_cnt desc
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="addViewCnt" parameterType="int">
+		update tb_pb
+		   set viewcnt = viewcnt + 1
+		 where pb_no = #{pbNo}
+	</update>
+		
+	<!-- PB LIST 페이지  -->
+	<sql id="searchSQL">
+	  <if test="searchName != null and searchName != ''">
+ 			and name like concat('%', #{searchName}, '%')
+	  </if>
+	</sql>
+	
+	<select id="selectPBStoreList" resultMap="storepbMap" parameterType="pagepb">
+		select * 
+		  from tb_pb
+		 where 1 = 1
+		<include refid="searchSQL"/>
+		 <choose>
+		 	<when test="sortType == 5">
+		 		order by viewcnt desc
+		 	</when>
+		 	<when test="sortType == 4">
+		 		order by rating desc
+		 	</when>
+		 	<when test="sortType == 3">
+		 		order by price desc
+		 	</when>
+		 	<when test="sortType == 2">
+		 		order by price asc
+		 	</when>
+		 	<when test="sortType == 1">
+		 		order by likecnt desc
+		 	</when>
+		 	<when test="sortType == 0">
+		 		order by regdate desc
+		 	</when>
+		 	<otherwise>
+		 		order by pb_no desc
+		 	</otherwise>
+	 	</choose>		
+		 limit #{begin}, #{end}
+	</select>
+
+	<select id="selectPBStoreCount" resultType="int" parameterType="pagepb">
+		select count(*)
+		  from tb_pb
+		 where 1 = 1
+		<include refid="searchSQL"/>
+	</select>
+	
+	<select id="selectPBStoreByNo" parameterType="int" resultMap="storepbMap">
+		select *
+		  from tb_pb
+		 where pb_no = #{pbNo}
+	</select>
+	
+	<update id="updatePBStore" parameterType="storePB">
+		update tb_pb
+		   set name = #{name},
+		       price = #{price},
+		       content = #{content}
+		 where pb_no = #{pbNo}		   
+	</update>
+	
+	<resultMap id="fileMap" type="ReviewFileVO" >
+		<result column="file_no" property="fileNo"/>
+		<result column="sysname" property="sysname"/>
+		<result column="orgname" property="orgname"/>
+		<result column="path" property="path"/>
+		<result column="pb_review_no" property="pbReviewNo"/>
+	</resultMap>
+	
+	<!-- PB REVIEW -->
+	<insert id="insertPBReview" parameterType="storePBReview"
+			useGeneratedKeys="true" keyProperty="pbReviewNo">
+		insert into tb_pb_review(
+			pb_no, 
+			content, 
+			mem_no,
+			rating
+		)
+		values(
+			#{pbNo},
+			#{content},
+			#{memNo},
+			#{rating}
+		)
+	</insert>
+	
+	<insert id="insertPBReviewImage" parameterType="ReviewFileVO">
+		insert into tb_file 
+		(
+			sysname, 
+			orgname, 
+			path,
+			pb_review_no
+		)
+		values 
+		(
+			#{sysname}, 
+			#{orgname}, 
+			#{path},
+			#{pbReviewNo}
+		)
+	</insert>
+	
+ 	<resultMap id="MemberMap" type="Member">
+		<result column="mem_no" property="memNo" />
+		<result column="mem_name" property="memName" />
+		<result column="mem_phone" property="memPhone" />
+		<result column="mem_email" property="memEmail" />
+		<result column="mem_nickname" property="memNickname" />
+		<result column="mem_pass" property="memPass" />
+		<result column="post_no" property="postNo" />
+		<result column="addr_default" property="addrDefault" />
+		<result column="addr_detail" property="addrDetail" />
+		<result column="manager_at" property="managerAt" />
+		<result column="img_orgname" property="imgOrgname" /> 
+		<result column="img_sysname" property="imgSysname" />
+		<result column="sign_date" property="signDate" />
+		<result column="last_date" property="lastDate" />
+		<result column="social_at" property="socialAt" />
+		<result column="point" property="point" />
+		<result column="grade_no" property="gradeNo" />
+		<result column="gradename" property="gradeName" />		
+		<result column="img_path" property="imgPath" />
+		<result column="recipe_cnt" property="recipeCnt" />
+		<result column="selling_cnt" property="sellingCnt" />		
+		<result column="totalBuy" property="totalBuy" />
+		<result column="totalSel" property="totalSel" />		
+		<result column="order_no" property="orderNo" />		
+		<result column="sell_mem_no" property="sellMemNo" />		
+		<result column="but_mem_no" property="buyMemNo" />		
+		<result column="tot_count" property="totCount" />		
+		<result column="get_" property="get" />		
+		<result column="order_sum" property="orderSum" />		
+		<result column="delivery_no" property="deliveryNo" />		
+	</resultMap>	
+	 
+	<!-- 후기 조회 파트  -->
+	<resultMap id="pbReviewSelectMap" type="storePBReview" >
+		<result column="pb_review_no" property="pbReviewNo"/>
+		<result column="pb_no" property="pbNo"/>
+		<result column="content" property="content"/>
+		<result column="rating" property="rating"/>
+		<result column="regdate" property="regDate"/>
+		<result column="mem_no" property="memNo"/>
+		<result column="mem_Nickname" property="memNickname"/>
+		<result column="path" property="path"/>
+		<result column="sysname" property="sysname"/>
+		
+		<collection property="member" column="mem_no" select="selectReviewNickName"/>
+		<collection property="reviewFile" column="pb_review_no" select="selectReviewFile"/>
+	</resultMap>
+	
+	<!-- PB REVIEW  -->
+	<select id="selectReview" resultMap="pbReviewSelectMap" parameterType="PagePbReview">
+		select * 
+		  from tb_pb_review 
+		 where pb_no = #{pbNo}
+		 order by pb_review_no desc
+	</select>
+	
+	<select id="selectReviewAjax" parameterType="PagePbReview" resultMap="pbReviewSelectMap">
+		select r.*, m.*
+		  from tb_pb_review r, tb_member m
+		 where r.mem_no = m.mem_no 
+		   and pb_no = #{pbNo}
+		 order by pb_review_no desc
+		 limit #{index}, 3
+	</select>
+	
+	<select id="selectReviewCount" parameterType="PagePbReview" resultType="int">
+		select count(*)
+		  from tb_pb_review
+		 where pb_no = #{pbNo}
+	</select>
+	
+	<select id="selectReviewFile" resultMap="fileMap" parameterType="int">
+		select *
+		  from tb_file
+		 where pb_review_no = #{pbReviewNo}
+	</select>
+	
+	<select id="selectReviewNickName" parameterType="int" resultMap="MemberMap">
+		select *
+	   	  from tb_member	
+	   	 where mem_no = #{memNo}
+	</select>
+	
+	<select id="selectReviewByNo" parameterType="int" resultMap="pbReviewSelectMap">
+		select *
+		  from tb_pb_review
+		 where pb_review_no = #{pbReviewNo}
+	</select>
+	
+	<!-- 후기 삭제 -->
+	<delete id="deleteReviewByNo" parameterType="int">
+		delete
+		  from tb_pb_review
+		 where pb_review_no = #{pbReviewNo}
+	</delete>
+
+	<!-- PB STORE 문의 부분 -->	
+	<resultMap id="pbInquireMap" type="StorePBInquire" >
+		<result column="inquiry_no" property="inquiryNo"/>
+		<result column="pb_no" property="pbNo"/>
+		<result column="content" property="content"/>
+		<result column="inquiry_regdate" property="inquiryRegdate"/>
+		<result column="answer_regdate" property="answerRegdate"/>
+		<result column="answer" property="answer"/>
+		<result column="mem_no" property="memNo"/>
+		<result column="mem_Nickname" property="memNickname"/>
+		<result column="answer_status" property="answerStatus"/>
+		
+		<collection property="member" column="mem_no" select="selectInquiryNickName"/>
+	</resultMap>
+	
+	<select id="selectPBInquire" parameterType="PagePbReview" resultMap="pbInquireMap">
+		select *
+		  from tb_pb_inquiry
+		 where pb_no = #{pbNo}
+		 order by inquiry_no desc
+		 limit #{index}, 3
+	</select>
+	
+	<select id="selectInquireCount" parameterType="PagePbReview" resultType="int">
+		select count(*)
+		  from tb_pb_inquiry
+		 where pb_no = #{pbNo}
+	</select>
+	
+	<select id="selectInquiryNickName" parameterType="int" resultMap="MemberMap">
+		select *
+	   	  from tb_member	
+	   	 where mem_no = #{memNo}
+	</select>
+	
+	<insert id="insertInquiry" parameterType="StorePBInquire">
+		insert into tb_pb_inquiry(
+			pb_no, 
+			content, 
+			mem_no 
+		)
+		values(
+			#{pbNo},
+			#{content},
+			#{memNo}
+		)
+	</insert>
+	
+	<select id="selectInquiryByNo" parameterType="int" resultMap="pbInquireMap">
+		select *
+	  	  from tb_pb_inquiry
+	 	 where inquiry_no = #{inquiryNo}
+	</select>
+	
+	<update id="updateInquiry" parameterType="StorePBInquire">
+		update tb_pb_inquiry
+ 		   set content = #{content}
+ 		 where inquiry_no = #{inquiryNo}
+	</update>
+	
+	<delete id="deleteInquiry" parameterType="int">
+		delete
+		  from tb_pb_inquiry
+		 where inquiry_no = #{inquiryNo}
+	</delete>
+	
+	<!-- 문의 답변(관리자) -->
+	<update id="updateInquiryAnswer" parameterType="StorePBInquire">
+		update tb_pb_inquiry
+		   set answer = #{answer},
+		       answer_status = #{answerStatus},
+			   answer_regdate = now()
+		 where inquiry_no = #{inquiryNo}
+	</update>
+
+	<!--  pb 상품 결제 부분  -->
+	<resultMap id="pbpaymentMap" type="StorePBPayment" >
+		<result column="payment_no" property="paymentNo"/>
+		<result column="mem_no" property="memNo"/>
+		<result column="pb_no" property="pbNo"/>
+		<result column="price" property="price"/>
+		<result column="prod_count" property="prodCount"/>
+		<result column="regdate" property="regdate"/>
+		<result column="name" property="name"/>
+
+	</resultMap>
+	
+	<insert id="insertPBPayment" parameterType="StorePBPayment">
+		insert into tb_payment(
+			mem_no,
+			pb_no, 
+			price, 
+			prod_count
+		)
+		values(
+			#{memNo},
+			#{pbNo},
+			#{price},
+			#{prodCount}
+		)
+	</insert>
+	
+	<select id="selectPBPaymentByNo" parameterType="int" resultMap="pbpaymentMap">
+		select *
+		  from tb_payment
+		 where payment_no = #{paymentNo}
+	</select>
+	
+	<!-- 장바구니 -->
+	<resultMap id="pbCarttMap" type="StorePBCart" >
+		<result column="cart_no" property="cartNo"/>
+		<result column="mem_no" property="memNo"/>
+		<result column="pb_no" property="pbNo"/>
+		<result column="price" property="price"/>
+		<result column="name" property="name"/>
+		<result column="imgpath" property="imgPath"/>
+		<result column="prod_count" property="prodCount"/>
+		
+	</resultMap>
+	
+	<insert id="insertPBCart" parameterType="StorePBCart">
+		insert into tb_pb_cart(
+			mem_no,
+			pb_no, 
+			price, 
+			prod_count
+		)
+		values(
+			#{memNo},
+			#{pbNo},
+			#{price},
+			#{prodCount}
+		)
+	</insert>
+	
+	<select id="selectPBCartByMember" parameterType="int" resultMap="pbCarttMap">
+		select p.imgpath, p.name, c.*
+		  from tb_pb p, tb_pb_cart c
+		 where p.pb_no = c.pb_no
+		   and c.mem_no = #{memNo}
+		 order by c.cart_no desc
+	</select>
+	
+	<!-- 장바구니 삭제 -->
+	<delete id="deletePBCart" parameterType="int">
+		delete 
+		  from tb_pb_cart
+		 where cart_no = #{cartNo}
+	</delete>
+	<!-- 별점(평점) 수정 -->
+	<update id="updateRatingByMember" parameterType="StorePB">
+		update tb_pb
+		   set rating=#{rating},
+		   	   rating_cnt=#{ratingCnt}
+		 where pb_no = #{pbNo}
+	</update>
+	
+	<!-- pb 좋아요 기능 -->
+	<select id="selectCountLike" parameterType="StorePBLike" resultType="int">
+		select count(*)
+		  from tb_pb_like
+		 where pb_no = #{pbNo}
+		   and mem_no = #{memNo}
+	</select>
+	
+	<insert id="insertPBLike" parameterType="StorePBLike">
+       insert into tb_pb_like(pb_no, mem_no)
+       values(#{pbNo}, #{memNo})
+   </insert>
+	
+	<update id="updateLikeCnt" parameterType="int">
+		update tb_pb
+		   set likecnt = likecnt + 1
+		 where pb_no = #{pbNo}
+	</update>
+	
+	<update id="deleteLikeCnt" parameterType="int">
+		update tb_pb
+		   set likecnt = likecnt - 1
+		 where pb_no = #{pbNo}
+	</update>
+	
+	<update id="updatePBLike" parameterType="StorePBLike">
+		update tb_pb_like
+		   set like_status = #{likeStatus}
+		 where pb_no = #{pbNo}
+           and mem_no = #{memNo} 			   
+	</update>
+	
+	<select id="selectLikeStatus" parameterType="StorePBLike" resultType="String">
+		select like_status
+		  from tb_pb_like
+		 where pb_no = #{pbNo}
+		   and mem_no = #{memNo}
+	</select>
+	
+	<select id="countLikeCnt" resultType="int" parameterType="int">
+		select likecnt
+		  from tb_pb
+		 where pb_no = #{pbNo}
+	</select>
+	
+	<!-- PB STORE 상품 결제내역 확인하기 -->
+	<select id="selectBuyList" parameterType="int" resultMap="pbpaymentMap">
+		select * 
+		  from tb_payment p, tb_pb b
+		 where p.pb_no = b.pb_no
+		   and p.mem_no = #{memNo}
+	</select>
+</mapper>

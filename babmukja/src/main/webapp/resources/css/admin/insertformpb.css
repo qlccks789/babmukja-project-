@@ -1,0 +1,83 @@
+@charset "UTF-8";
+#writeform-header{
+    color: #7db341;
+    font-size : 33px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 30px;
+}
+#paragraph{
+    margin : 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom : 20px;
+    font-size : 17px;
+    color: #7db341;
+    
+}
+#editorjs{
+    margin : 0 auto;
+    width: 1200px;
+    border-right : 1px solid gainsboro;
+    border-left : 1px solid gainsboro;
+}
+#buttonWrapper{
+    margin : 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+button:focus{
+    outline: none;
+}
+
+button{
+    border  : 0;
+    background :gainsboro;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 120px;
+    font-size: 17px;
+    color :White;
+    border-radius: 5px;
+    transition: .3s;
+    margin-bottom: 100px;
+}
+button:hover{
+    background :#7db341;
+}
+
+#name{
+    width: 649px;
+    height: 50px;
+    border-radius : 5px;
+    border : 1px solid gainsboro;
+    font-size: 20px;
+    font-weight: bolder;
+    display: block;
+    margin-left :274px;
+    outline: #7db341;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#price{
+    width: 649px;
+    height: 50px;
+    border-radius : 5px;
+    border : 1px solid gainsboro;
+    font-size: 15px;
+    font-weight: bolder;
+    display: block;
+    margin-left :274px;
+    outline: #7db341;
+    text-align: center;
+}
+
+body {
+	background-color: white;
+}
