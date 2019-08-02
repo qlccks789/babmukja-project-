@@ -28,7 +28,7 @@
 몇일동안 머리를 쥐어 감싸도 풀리는 않는 문제들 또한 있었다. 하지만 팀원들과 같이 고민하고 공부하여 해결 할 수 있었다.
 부족한 부분을 팀원들과의 협업을 통하여 매꾸어 가며 프로젝트를 완성한 것에서 협업의 중요함과 필요성을 느낄 수 있었다.
 
-## 프로젝트 전체 구현 영상
+## 프로젝트 전체 구현 영상 (클릭시 실행)
 [![Video Label](https://img.youtube.com/vi/EgwHpzViGGU/0.jpg)](https://youtu.be/EgwHpzViGGU)
 
 
@@ -95,6 +95,6 @@
 * 레시피 작성으로 이동
 <img src="/img/mykitchen2.gif" width="700px" height="350px">
 
-## 마이페이지 구현 영상
+## 마이페이지 구현 영상 (클릭시 실행)
 [![Video Label](https://img.youtube.com/vi/bPgruR_YFa0/0.jpg)](https://youtu.be/bPgruR_YFa0)
 
