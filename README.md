@@ -29,4 +29,10 @@
 부족한 부분을 팀원들과의 협업을 통하여 매꾸어 가며 프로젝트를 완성한 것에서 협업의 중요함과 필요성을 느낄 수 있었다.
 
 ## 프로젝트 구현 영상
-- 업로드 예정
+[![Video Label](https://img.youtube.com/vi/EgwHpzViGGU/0.jpg)](https://youtu.be/EgwHpzViGGU)
+
+### ---------------------------------
+<img src="/img/reicpewrite.gif" width="700px" height="300px">
+<img src="/img/recipewirte-body.jpg" width="700px" height="400px">
+<img src="/img/editor-menubar.gif" width="700px" height="100px">
+<img src="/img/editor-imgupload.gif" width="700px" height="250px">
