@@ -92,6 +92,6 @@
 * 결제 내역 확인 -> 타인의 경우 확인 
 * 레시피 작성으로 이동
 <img src="/img/mykitchen2.gif" width="700px" height="350px">
-### 마이페이지 구현 영상
+
 [![Video Label](https://img.youtube.com/vi/bPgruR_YFa0/0.jpg)](https://youtu.be/bPgruR_YFa0)
 
