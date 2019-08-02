@@ -36,10 +36,5 @@
 <img src="/img/recipewirte-body.jpg" width="700px" height="400px">
 <img src="/img/editor-menubar.gif" width="700px" height="100px">
 <img src="/img/editor-imgupload.gif" width="700px" height="250px">
-
 ### ---------------------------------
 
-<img src="https://user-images.githubusercontent.com/47876964/62341463-76e6e300-b51e-11e9-9197-32a856b34fea.gif" width="700px" height="300px">
-<img src="https://user-images.githubusercontent.com/47876964/62341667-22903300-b51f-11e9-993d-4c13132b4e7f.jpg" width="700px" height="400px">
-<img src="https://user-images.githubusercontent.com/47876964/62341733-566b5880-b51f-11e9-9e8b-94151417c778.gif" width="700px" height="100px">
-<img src="https://user-images.githubusercontent.com/47876964/62341940-1a84c300-b520-11e9-9d08-34cd194791bf.gif" width="700px" height="250px">
