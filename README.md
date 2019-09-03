@@ -1,4 +1,4 @@
-# babmukja-project-
+# babmukja-project
 
 ## 기획 의도
 
